@@ -53,7 +53,6 @@ letter-spacing: -0.363px;
 `
 const CardContent = styled.p`
 color: rgba(217, 217, 217, 0.79);
-
 text-align: center;
 font-family: Puritan;
 font-size: 18px;
@@ -61,6 +60,8 @@ font-style: normal;
 font-weight: 700;
 line-height: normal;
 letter-spacing: -0.297px;
+margin-right: 5%;
+margin-left: 5%;
 `
 
 function WhatWeDo() {
