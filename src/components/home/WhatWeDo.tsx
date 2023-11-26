@@ -14,7 +14,7 @@ width: 100%;
 `
 const StyledContainer = styled(Container)`
 height: auto;
-padding-top: 50px;
+padding-top: 20px;
 display: flex;
 flex-direction: column;
 justify-content: center;
@@ -29,6 +29,16 @@ font-weight: 700;
 line-height: normal;
 letter-spacing: -0.462px;
 text-align: center;
+padding-bottom: 20px;
+@media screen and (max-width: 600px) {
+color: #FFF;
+font-family: Puritan;
+font-size: 18px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+letter-spacing: -0.297px;
+      }
 `
 
 const Card = styled.div`
@@ -41,6 +51,15 @@ justify-content: center;
 align-items: center;
 gap: 25px;
 background: linear-gradient(0deg, rgba(0, 0, 0, 0.70) 0%, rgba(0, 0, 0, 0.70) 100%), rgba(255, 255, 255, 0.12);
+@media screen and (max-width: 600px) {
+ display: flex;
+height: 244px;
+padding: 10px;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+gap: 25px;
+          }
 `
 const CardHeader = styled.h4`
 color: #FFF;
@@ -50,6 +69,15 @@ font-style: normal;
 font-weight: 700;
 line-height: normal;
 letter-spacing: -0.363px;
+@media screen and (max-width: 600px) {
+color: #FFF;
+font-family: Puritan;
+font-size: 16px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+letter-spacing: -0.264px;
+      }
 `
 const CardContent = styled.p`
 color: rgba(217, 217, 217, 0.79);
@@ -62,6 +90,16 @@ line-height: normal;
 letter-spacing: -0.297px;
 margin-right: 5%;
 margin-left: 5%;
+@media screen and (max-width: 600px) {
+color: rgba(217, 217, 217, 0.79);
+text-align: center;
+font-family: Puritan;
+font-size: 12px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+letter-spacing: -0.198px;
+          }
 `
 
 function WhatWeDo() {

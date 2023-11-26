@@ -2,10 +2,10 @@ import styled from '@emotion/styled';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import { useEffect, useState } from 'react';
-import image1 from '../../assets/web.png';
-import image2 from '../../assets/erp.png';
-import image3 from '../../assets/mobile.png';
-import image4 from '../../assets/uiux.png';
+import image1 from '../../assets/web-dev-max.png';
+import image2 from '../../assets/erp-max.png';
+import image3 from '../../assets/mobile-max.png';
+import image4 from '../../assets/ui.png';
 import ellipse from '../../assets/Ellipse1.svg'
 import HomeNavBar from '../navbar/HomeNavBar';
 
@@ -13,16 +13,21 @@ const StyledBox = styled(Box)`
   width: 100%;            
   background-position: center right; 
   background-repeat: repeat;
-  background-size: 50% 100%;
+  background-size: 100% 100%;
   margin: 0;
   padding: 0;
   top: 0;
   @media screen and (max-width: 900px) {
     background-size: 100% 100%;
   }
+
 `
 const StyledContainer = styled(Container)`
 height: 460px;  
+@media screen and (max-width: 600px) {
+height: 373px;
+flex-shrink: 0;
+  }
 `
 const WebDevContainer = styled.div`
 display: inline-flex;
@@ -60,6 +65,15 @@ font-style: normal;
 font-weight: 400;
 line-height: normal;
 letter-spacing: -0.264px;
+@media screen and (max-width: 600px) {
+color: #FFF;
+font-family: Puritan;
+font-size: 10px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+letter-spacing: -0.165px;
+  }
 `
 const ContentIcon = styled.img`
 width: 12px;
@@ -77,6 +91,15 @@ font-style: normal;
 font-weight: 700;
 line-height: normal;
 letter-spacing: -0.627px;
+@media screen and (max-width: 600px) {
+    color: #FFF;
+    font-family: Puritan;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -0.297px;
+  }
 `
 
 function TopContainer() {
