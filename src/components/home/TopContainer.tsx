@@ -2,10 +2,10 @@ import styled from '@emotion/styled';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import { useEffect, useState } from 'react';
-import image1 from '../../assets/web-dev-max.png';
-import image2 from '../../assets/erp-max.png';
-import image3 from '../../assets/mobile-max.png';
-import image4 from '../../assets/ui.png';
+import image1 from '../../assets/web.png';
+import image2 from '../../assets/erp.png';
+import image3 from '../../assets/mobile.png';
+import image4 from '../../assets/uiux.png';
 import ellipse from '../../assets/Ellipse1.svg'
 import HomeNavBar from '../navbar/HomeNavBar';
 
