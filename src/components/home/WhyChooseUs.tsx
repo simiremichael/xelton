@@ -154,7 +154,7 @@ position: absolute;
 left: 0;
 margin-left: 166px;
 width: 20%;
-width: 200px;
+width: 180px;
 `
 
 function WhyChooseUs() {
