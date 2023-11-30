@@ -11,7 +11,7 @@ import HomeNavBar from '../navbar/HomeNavBar';
 
 const StyledBox = styled(Box)`
   width: 100%;            
-  background-position: center right; 
+  background-position: center; 
   background-repeat: repeat;
   background-size: 100% 100%;
   margin: 0;
@@ -34,28 +34,28 @@ display: inline-flex;
 flex-direction: column;
 align-items: flex-start;
 gap: 44px;
-margin-top: 70px;
+margin-top: 10%;
 `
 const ERPContainer = styled.div`
 display: inline-flex;
 flex-direction: column;
 align-items: flex-start;
 gap: 44px;
-margin-top: 70px;
+margin-top: 10%;
 `
 const MobileContainer = styled.div`
 display: inline-flex;
 flex-direction: column;
 align-items: flex-start;
 gap: 44px;
-margin-top: 50px;
+margin-top: 10%;
 `
 const UIUXContainer = styled.div`
 display: inline-flex;
 flex-direction: column;
 align-items: flex-start;
 gap: 44px;
-margin-top: 70px;
+margin-top: 10%;
 `
 const Content = styled.div`
 color: #FFF;
