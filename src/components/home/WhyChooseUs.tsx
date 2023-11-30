@@ -26,6 +26,7 @@ const Heading = styled.h2`
 color: #FFF;
 font-family: Puritan;
 font-size: 28px;
+margin-bottom: 40px;
 font-style: normal;
 font-weight: 700;
 line-height: normal;
@@ -42,10 +43,14 @@ letter-spacing: -0.297px;
 `
 const InnerContainer = styled.div`
 display: flex;
-align-items: center;
+align-items: flex-start;
 justify-content: center;
 width: 100%;
-height: 540px;
+height: 300px;
+@media (max-width: 600px) {
+    height: 540px;
+    }
+    
 `
 const InnerDetaisContainer = styled.div`
 border-top: 2px dotted  #F00;
