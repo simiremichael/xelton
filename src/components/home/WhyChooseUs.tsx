@@ -30,6 +30,15 @@ font-style: normal;
 font-weight: 700;
 line-height: normal;
 letter-spacing: -0.462px;
+@media (min-width: 769px) {
+    color: #FFF;
+    font-family: Puritan;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -0.297px;
+}
 `
 const InnerContainer = styled.div`
 display: flex;
@@ -131,7 +140,7 @@ width: 78px;
 position: absolute;
 z-index: 1300;
 border: 2px dotted  #F00;
-margin-left: 140px;
+margin-left: 120px;
 `
 const MobileNumberContent = styled.p`
 color: #FFF;
