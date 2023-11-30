@@ -30,14 +30,14 @@ font-style: normal;
 font-weight: 700;
 line-height: normal;
 letter-spacing: -0.462px;
-@media (min-width: 769px) {
-    color: #FFF;
-    font-family: Puritan;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    letter-spacing: -0.297px;
+@media (max-width: 600px) {
+color: #FFF;
+font-family: Puritan;
+font-size: 18px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+letter-spacing: -0.297px;
 }
 `
 const InnerContainer = styled.div`
@@ -54,7 +54,7 @@ justify-content: space-between;
 width: 100%;
 margin: 0 10%;
 border-radius: 10px;
-@media (max-width: 768px) {
+@media (max-width: 600px) {
 display: none
 }
 `
@@ -112,7 +112,7 @@ margin-top: 10px;
 height: 520px;
 width: 100%;
 border-radius: 10px;
-@media (min-width: 769px) {
+@media (min-width: 601px) {
 display: none
 }
 `
@@ -145,7 +145,7 @@ margin-left: 120px;
 const MobileNumberContent = styled.p`
 color: #FFF;
 font-family: Puritan;
-font-size: 18px;
+font-size: 16px;
 font-style: normal;
 font-weight: 700;
 line-height: normal;
