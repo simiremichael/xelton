@@ -99,7 +99,7 @@ display: flex;
 justify-content: space-between;
 width: 100%;
 margin: 0 2%;
-margin-top: 80px;
+margin-top: 10px;
 height: 520px;
 width: 100%;
 border-radius: 10px;
@@ -142,7 +142,10 @@ font-weight: 700;
 line-height: normal;
 letter-spacing: -0.297px;
 position: absolute;
-margin-left: 320px;
+left: 0;
+margin-left: 180px;
+width: 20%;
+width: 200px;
 `
 
 function WhyChooseUs() {
