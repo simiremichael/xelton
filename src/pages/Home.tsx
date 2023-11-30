@@ -7,8 +7,7 @@ import WhyChooseUs from "../components/home/WhyChooseUs";
 
 
 const StyledBox = styled(Box)`
-width: 100%;
-height: 100%;
+
 `
 // const StyledContainer = styled(Container)`
 

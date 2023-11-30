@@ -62,15 +62,15 @@ gap: 25px;
           }
 `
 const CardHeader = styled.h4`
-color: #FFF;
+color: #fff;
 font-family: Puritan;
-font-size: 22px;
 font-style: normal;
-font-weight: 700;
 line-height: normal;
 letter-spacing: -0.363px;
+font-size: 22px;
+font-weight: 700;
 @media screen and (max-width: 600px) {
-color: #FFF;
+color: #fff;
 font-family: Puritan;
 font-size: 16px;
 font-style: normal;
@@ -131,7 +131,7 @@ function WhatWeDo() {
          <Grid item lg={6} md={6} sm={6} xs={12}>
           <Card>
             <CardHeader>UI/UX Design</CardHeader>
-         <CardContent>Intuitivr and visually appealing user interfaces, coupled with a focus on user experience, to ensure that your software not only flawlessly but is a pleasure to use.</CardContent>
+         <CardContent>Intuitive and visually appealing user interfaces, coupled with a focus on user experience, to ensure that your software not only flawlessly but is a pleasure to use.</CardContent>
           </Card>
          </Grid>
         </Grid>

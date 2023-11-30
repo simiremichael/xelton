@@ -84,7 +84,7 @@ stroke: #000;
 margin-right: 5px;
 ` 
 const ContentHeader = styled.div`
-olor: #FFF;
+color: #FFF;
 font-family: Puritan;
 font-size: 38px;
 font-style: normal;
