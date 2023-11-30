@@ -152,7 +152,7 @@ line-height: normal;
 letter-spacing: -0.297px;
 position: absolute;
 left: 0;
-margin-left: 180px;
+margin-left: 166px;
 width: 20%;
 width: 200px;
 `
