@@ -85,6 +85,13 @@ padding: 10px;
 justify-content: center;
 align-items: center;
 gap: 10px;
+color: #F00;
+font-family: Puritan;
+font-size: 16px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+letter-spacing: -0.08px;
     }
 `
 const Span = styled.span`

@@ -78,6 +78,13 @@ cursor: pointer;
   align-items: center;
   gap: 10px;
   flex-shrink: 0;
+  color: #F00;
+font-family: Puritan;
+font-size: 16px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+letter-spacing: -0.08px;
   }
  `
 
