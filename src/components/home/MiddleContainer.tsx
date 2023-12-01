@@ -21,6 +21,10 @@ const InnerContainer = styled.div`
 width: 100%;
 height: 408px;
 flex-shrink: 0;
+@media (max-width: 900px) {
+height: 310px;
+flex-shrink: 0;
+}
 `
 const Image = styled.img`
 width: 100%;
@@ -31,7 +35,13 @@ const ItemContainer = styled.div`
 display: flex;
 flex-direction: column;
 justify-content: center;
+
 height: 100%;
+@media (min-width: 900px) {
+    height: 678px;
+    flex-shrink: 0;
+    align-items: center;
+}
 `
 const Items = styled.p`
 color: #FFF;
@@ -41,6 +51,15 @@ font-style: normal;
 font-weight: 700;
 line-height: normal;
 letter-spacing: -0.462px;
+@media (max-width: 900px) {
+    color: #FFF;
+    font-family: Puritan;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -0.297px;
+}
 `
 const ContactBtn = styled.button`
 display: flex;
@@ -68,9 +87,18 @@ font-style: normal;
 font-weight: 700;
 line-height: normal;
 letter-spacing: -0.462px;
+@media (max-width: 900px) {
+    color: #AEA196;
+    font-family: Puritan;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -0.297px;
+}
 `
 const EmptyContainer =  styled.div`
-width: 315px;
+width: 250px;
 margin-top: 20%;
 position: relative;
 height: 226px;

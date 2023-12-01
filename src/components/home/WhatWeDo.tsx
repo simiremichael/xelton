@@ -50,20 +50,20 @@ const Card = styled.div`
 display: flex;
 width: 100%;
 height: 333px;
-padding: 10px;
+padding: 15px;
 flex-direction: column;
 justify-content: center;
 align-items: center;
-gap: 25px;
+gap: 15px;
 background: linear-gradient(0deg, rgba(0, 0, 0, 0.70) 0%, rgba(0, 0, 0, 0.70) 100%), rgba(255, 255, 255, 0.12);
 @media screen and (max-width: 600px) {
  display: flex;
 height: 244px;
-padding: 10px;
+padding: 5px;
 flex-direction: column;
 justify-content: center;
 align-items: center;
-gap: 25px;
+gap: 5px;
           }
 `
 const CardIcon = styled.img`
@@ -127,7 +127,7 @@ function WhatWeDo() {
     }}>
         <StyledContainer>
         <Heading>What We Do To Serve You Best</Heading>
-        <Grid container spacing={6} columnSpacing={8}>
+        <Grid container spacing={3} columnSpacing={4}>
          <Grid item lg={6} md={6} sm={6} xs={12}>
           <Card>
             <CardIcon src={vectorErp} />
