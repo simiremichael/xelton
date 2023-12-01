@@ -59,7 +59,7 @@ background: linear-gradient(0deg, rgba(0, 0, 0, 0.70) 0%, rgba(0, 0, 0, 0.70) 10
 @media screen and (max-width: 600px) {
  display: flex;
 height: 244px;
-padding: 5px;
+padding: 5px 0;
 flex-direction: column;
 justify-content: center;
 align-items: center;
@@ -105,8 +105,8 @@ font-style: normal;
 font-weight: 700;
 line-height: normal;
 letter-spacing: -0.297px;
-margin-right: 5%;
-margin-left: 5%;
+padding-right: 5%;
+padding-left: 5%;
 margin-top: 0;
 @media screen and (max-width: 600px) {
 color: rgba(217, 217, 217, 0.79);
@@ -127,7 +127,7 @@ function WhatWeDo() {
     }}>
         <StyledContainer>
         <Heading>What We Do To Serve You Best</Heading>
-        <Grid container spacing={3} columnSpacing={4}>
+        <Grid container spacing={3} columnSpacing={7}>
          <Grid item lg={6} md={6} sm={6} xs={12}>
           <Card>
             <CardIcon src={vectorErp} />

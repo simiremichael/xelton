@@ -34,28 +34,41 @@ display: inline-flex;
 flex-direction: column;
 align-items: flex-start;
 gap: 44px;
-margin-top: 10%;
+margin-top: 15%;
+justify-content: center;
+@media screen and (max-width: 600px) {
+  margin-top: 30%;
+}
 `
 const ERPContainer = styled.div`
 display: inline-flex;
 flex-direction: column;
 align-items: flex-start;
 gap: 44px;
-margin-top: 10%;
+margin-top: 15%;
+@media screen and (max-width: 600px) {
+  margin-top: 30%;
+}
 `
 const MobileContainer = styled.div`
 display: inline-flex;
 flex-direction: column;
 align-items: flex-start;
 gap: 44px;
-margin-top: 10%;
+margin-top: 15%;
+@media screen and (max-width: 600px) {
+  margin-top: 30%;
+}
 `
 const UIUXContainer = styled.div`
 display: inline-flex;
 flex-direction: column;
 align-items: flex-start;
 gap: 44px;
-margin-top: 10%;
+margin-top: 15%;
+@media screen and (max-width: 600px) {
+  margin-top: 30%;
+}
 `
 const Content = styled.div`
 color: #FFF;

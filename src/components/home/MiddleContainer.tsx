@@ -21,7 +21,7 @@ const InnerContainer = styled.div`
 width: 100%;
 height: 408px;
 flex-shrink: 0;
-@media (max-width: 900px) {
+@media screen and (max-width: 900px) {
 height: 310px;
 flex-shrink: 0;
 }
@@ -37,7 +37,7 @@ flex-direction: column;
 justify-content: center;
 
 height: 100%;
-@media (min-width: 900px) {
+@media screen and(min-width: 900px) {
     height: 678px;
     flex-shrink: 0;
     align-items: center;
@@ -87,7 +87,7 @@ font-style: normal;
 font-weight: 700;
 line-height: normal;
 letter-spacing: -0.462px;
-@media (max-width: 900px) {
+@media  screen and (max-width: 900px) {
     color: #AEA196;
     font-family: Puritan;
     font-size: 18px;
