@@ -10,12 +10,13 @@ import vectorUx from '../../assets/vector-ux.svg'
 
 
 const StyledBox = styled(Box)`
-flex-shrink: 0;
 background-position: center; 
 background-repeat: no-repeat;
 background-size: cover;
 width: 100%;
 padding-bottom: 20px;
+display: flex;
+
 `
 const StyledContainer = styled(Container)`
 height: auto;
@@ -50,20 +51,19 @@ const Card = styled.div`
 display: flex;
 width: 100%;
 height: 333px;
-padding: 15px;
 flex-direction: column;
 justify-content: center;
 align-items: center;
 gap: 15px;
 background: linear-gradient(0deg, rgba(0, 0, 0, 0.70) 0%, rgba(0, 0, 0, 0.70) 100%), rgba(255, 255, 255, 0.12);
 @media screen and (max-width: 600px) {
- display: flex;
-height: 244px;
-padding: 5px 0;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-gap: 15px;
+  display: flex;
+  width: 100%;
+  height: 244px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
           }
 `
 const CardIcon = styled.img`
@@ -96,17 +96,19 @@ line-height: normal;
 letter-spacing: -0.264px;
       }
 `
+const CardContentContainer = styled.div`
+margin: 0 5%
+`
 const CardContent = styled.p`
 color: rgba(217, 217, 217, 0.79);
 text-align: center;
 font-family: Puritan;
+width: 100%;
 font-size: 18px;
 font-style: normal;
 font-weight: 700;
 line-height: normal;
 letter-spacing: -0.297px;
-padding-right: 5%;
-padding-left: 5%;
 margin-top: 0;
 @media screen and (max-width: 600px) {
 color: rgba(217, 217, 217, 0.79);
@@ -127,33 +129,41 @@ function WhatWeDo() {
     }}>
         <StyledContainer>
         <Heading>What We Do To Serve You Best</Heading>
-        <Grid container spacing={3} columnSpacing={7}>
+        <Grid container spacing={3} >
          <Grid item lg={6} md={6} sm={6} xs={12}>
           <Card>
             <CardIcon src={vectorErp} />
             <CardHeader>Custom Software Development</CardHeader>
+            <CardContentContainer>
          <CardContent>Tailored solutions designed to address the specific needs and challenges of your business, ensuring optimal performance and efficiency.</CardContent>
+         </CardContentContainer>
           </Card>
          </Grid>
          <Grid item lg={6} md={6} sm={6} xs={12}>
           <Card>
           <CardIcon src={vectorMobile} />
             <CardHeader>Mobile App Development</CardHeader>
+            <CardContentContainer>
          <CardContent>Innovative mobile applications for IOS and Android platforms, combining user-centric design with seamless functionality to engage your target audience.</CardContent>
+         </CardContentContainer>
           </Card>
          </Grid>
          <Grid item lg={6} md={6} sm={6} xs={12}>
           <Card>
           <CardIcon src={vectorWeb} />
             <CardHeader>Web Development</CardHeader>
+            <CardContentContainer>
          <CardContent>Robust and scalable web solutions, from dynamic websites to complex web applications, crafted to enhance your online presence and business growth.</CardContent>
+         </CardContentContainer>
           </Card>
          </Grid>
          <Grid item lg={6} md={6} sm={6} xs={12}>
           <Card>
           <CardIcon src={vectorUx} />
             <CardHeader>UI/UX Design</CardHeader>
+            <CardContentContainer>
          <CardContent>Intuitive and visually appealing user interfaces, coupled with a focus on user experience, to ensure that your software not only flawlessly but is a pleasure to use.</CardContent>
+         </CardContentContainer>
           </Card>
          </Grid>
         </Grid>
