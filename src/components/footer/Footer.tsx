@@ -179,7 +179,7 @@ function Footer() {
         <StyledContainer>
             <Grid container>
         <Grid item lg={4} md={4} sm={12} xs={12}>
-                <InnerContainer style={{height: '100%', display: 'flex', width: '100%', alignItems: 'self-start'}}>
+                <InnerContainer style={{height: '100%', display: 'flex', width: '90%', overflowX: 'hidden', alignItems: 'self-start'}}>
                     <LogoContainer>
                 <StyledLink id='navbar' to='/'>
             <LogoContent><Logo src={logo}  alt='logo'/>elton Technologies</LogoContent>
