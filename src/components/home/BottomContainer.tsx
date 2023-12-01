@@ -69,6 +69,16 @@ letter-spacing: -0.1px;
 border: none;
 outlined: none;
 cursor: pointer;
+@media screen and (max-width: 600px) {
+  display: flex;
+  width: 159px;
+  height: 38px;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  }
  `
 
 function BottomContainer() {
