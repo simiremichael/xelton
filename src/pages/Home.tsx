@@ -4,6 +4,8 @@ import Box from '@mui/material/Box';
 import WhatWeDo from "../components/home/WhatWeDo";
 import WhyChooseUs from "../components/home/WhyChooseUs";
 import MiddleContainer from "../components/home/MiddleContainer";
+import BottomContainer from "../components/home/BottomContainer";
+import Footer from "../components/footer/Footer";
 // import Container from '@mui/material/Container';
 
 
@@ -21,6 +23,8 @@ function Home() {
         <WhatWeDo />
         <WhyChooseUs />
         <MiddleContainer />
+        <BottomContainer />
+        <Footer />
     </StyledBox>
   )
 }
