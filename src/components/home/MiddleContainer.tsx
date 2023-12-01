@@ -71,13 +71,21 @@ align-items: center;
 gap: 10px;
 flex-shrink: 0;
 color: #F00;
-
 font-family: Puritan;
 font-size: 20px;
 font-style: normal;
 font-weight: 700;
 line-height: normal;
 letter-spacing: -0.1px;
+@media screen and (max-width: 600px) {
+display: flex;
+width: 159px;
+height: 38px;
+padding: 10px;
+justify-content: center;
+align-items: center;
+gap: 10px;
+    }
 `
 const Span = styled.span`
 color: #AEA196;
