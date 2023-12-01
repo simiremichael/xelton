@@ -39,6 +39,15 @@ font-style: normal;
 font-weight: 700;
 line-height: normal;
 letter-spacing: -0.462px;
+@media screen and (max-width: 600px) {
+color: #FFF;
+font-family: Puritan;
+font-size: 18px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+letter-spacing: -0.297px;
+  }
 `
  const Content = styled.p`
  color: rgba(217, 217, 217, 0.70);
