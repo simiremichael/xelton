@@ -57,6 +57,9 @@ font-style: normal;
 font-weight: 700;
 line-height: normal;
 letter-spacing: -0.33px;
+@media screen and (max-width: 600px) {
+  font-size: 16px;
+  }
  `
  const ContactBtn = styled.button`
  display: flex;
