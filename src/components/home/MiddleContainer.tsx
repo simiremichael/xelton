@@ -9,7 +9,7 @@ width: 100%;
 height: 546px;
 flex-shrink: 0;
 background: linear-gradient(143deg, rgba(0, 0, 0, 0.20) 10.85%, rgba(0, 0, 0, 0.20) 181.83%), #050507;
-@media (max-width: 900px) {
+@media screen and (max-width: 900px) {
 height: auto;
 }
 padding-bottom: 20px;
@@ -51,7 +51,7 @@ font-style: normal;
 font-weight: 700;
 line-height: normal;
 letter-spacing: -0.462px;
-@media (max-width: 900px) {
+@media screen and (max-width: 900px) {
     color: #FFF;
     font-family: Puritan;
     font-size: 18px;
@@ -87,7 +87,7 @@ font-style: normal;
 font-weight: 700;
 line-height: normal;
 letter-spacing: -0.462px;
-@media  screen and (max-width: 900px) {
+@media screen and (max-width: 900px) {
     color: #AEA196;
     font-family: Puritan;
     font-size: 18px;
