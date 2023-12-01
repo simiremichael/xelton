@@ -63,7 +63,7 @@ padding: 5px;
 flex-direction: column;
 justify-content: center;
 align-items: center;
-gap: 5px;
+gap: 15px;
           }
 `
 const CardIcon = styled.img`
