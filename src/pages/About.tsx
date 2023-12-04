@@ -65,8 +65,8 @@ flex-shrink: 0;
 border-radius: 100px;
 background: #F2B5B5;
 @media screen and (max-width: 900px) {
-    height: auto;
-    width: calc(300px + 30%);
+    height: 200px;
+    width: calc(280px + 30%);
     margin: 10px 5%;
 }
 `

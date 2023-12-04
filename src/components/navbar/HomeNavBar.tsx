@@ -84,8 +84,34 @@ background: #FFF;
     display: none;
   }
 `
+const MobileHireUsBtn = styled.button`
+display: flex;
+padding: 10px;
+justify-content: center;
+align-items: center;
+gap: 10px;
+color: #F00;
+cursor: pointer;
+border-radius: 10px;
+background: #FFF;
+outline: none;
+border: none;
+`
 const StyledLink = styled(NavLink)`
 text-decoration: none;
+:active {
+    font-weight: bold;
+}
+`
+const StyledLinks = styled(NavLink)`
+text-decoration: none;
+color: #050507;
+font-family: Puritan;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+letter-spacing: -0.264px;
 :active {
     font-weight: bold;
 }
@@ -148,9 +174,9 @@ function HomeNavBar() {
           'aria-labelledby': 'basic-button',
         }}
       >
-        <MenuItem onClick={handleClose}> <StyledLink id='navbar' to='/about'>About</StyledLink></MenuItem>
-        <MenuItem onClick={handleClose}>  <StyledLink id='navbar' to='/contact'>Contact</StyledLink></MenuItem>
-        <MenuItem onClick={handleClose}> <HireUsBtn>Hire Us</HireUsBtn></MenuItem>
+        <MenuItem onClick={handleClose}> <StyledLinks id='navbar' to='/about'>About</StyledLinks></MenuItem>
+        <MenuItem onClick={handleClose}>  <StyledLinks id='navbar' to='/contact'>Contact</StyledLinks></MenuItem>
+        <MenuItem onClick={handleClose}> <MobileHireUsBtn>Hire Us</MobileHireUsBtn></MenuItem>
       </Menu>
     </StyledBox>
   )
