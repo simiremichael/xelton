@@ -66,8 +66,11 @@ border-radius: 100px;
 background: #F2B5B5;
 @media screen and (max-width: 900px) {
     height: 200px;
-    width: calc(280px + 30%);
+    width: calc(260px + 30%);
     margin: 10px 5%;
+}
+@media screen and (max-width: 600px) {
+    width: calc(240px + 30%);
 }
 `
 const ValueHeading = styled.h3`
