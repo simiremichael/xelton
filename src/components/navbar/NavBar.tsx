@@ -80,6 +80,9 @@ cursor: pointer;
 border-radius: 10px;
 border: 0.71px solid rgba(255, 0, 0, 0.20);
 background: #FFF;
+@media screen and (max-width: 900px) {
+  display: none;
+}
 `
 const MobileHireUsBtn = styled.button`
 display: flex;
