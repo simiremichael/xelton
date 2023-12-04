@@ -4,6 +4,8 @@ import Box from '@mui/material/Box';
 import SvgContainer from "../components/SvgContainer";
 import { Container, Grid } from "@mui/material";
 import image from '../assets/about-img.png'
+import bottomImg  from '../assets/about-bottom-img.png'
+import Footer from "../components/footer/Footer";
 
 
 const StyledBox = styled(Box)`
@@ -45,7 +47,6 @@ flex-shrink: 0;
 @media screen and (max-width: 600px) {
     display: flex;
     width: 100%;
-    height: auto;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -98,8 +99,73 @@ letter-spacing: -0.33px;
 `
 const BottomContainer = styled.div`
 width: 100%;
-height: 438px;
+height: auto;
 flex-shrink: 0;
+background: #000;
+`
+const BottomLeftInnerContainer = styled.div`
+width: 100%;
+height: 343px;
+flex-shrink: 0;
+display: flex;
+align-items: center;
+justify-content: center;
+background-position: center; 
+background-repeat: repeat;
+background-size: 100% 100%;
+@media screen and (max-width: 600px) {
+    height: 334px;
+}
+`
+const Mission = styled.h2`
+color: rgba(37, 49, 56, 0.70);
+font-family: Puritan;
+font-size: 80px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+letter-spacing: -0.825px;
+@media screen and (max-width: 600px) {
+    color: rgba(37, 49, 56, 0.70);
+    font-family: Puritan;
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -0.825px;
+}
+`
+const BottomRightInnerContainer = styled.div`
+width: 100%;
+height: 343px;
+flex-shrink: 0;
+display: flex;
+justify-content: center;
+align-items: center;
+@media screen and (max-width: 600px) {
+    height: 334px;
+}
+`
+const Text = styled.p`
+color: #FFF;
+text-align: center;
+font-family: Puritan;
+font-size: 26px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+letter-spacing: -0.429px;
+margin: 0;
+@media screen and (max-width: 600px) {
+color: #FFF;
+text-align: center;
+font-family: Puritan;
+font-size: 16px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+letter-spacing: -0.264px;
+}
 `
 
 function About() {
@@ -125,6 +191,7 @@ const text = "About Us"
                 </Grid>
             </Grid>
         </TopContainer>
+        <div style={{height: 'auto', width: '100%'}}>
         <MiddleContainer>
         <ValueContainer>
             <ValueHeading>Our Values</ValueHeading>
@@ -135,7 +202,26 @@ Windows), Search Engine Optimization, Domain and Hosting, Branding, ERP Software
 other IT Services.</ValueDetails>
         </ValueContainer>
         </MiddleContainer>
-        <BottomContainer></BottomContainer>
+        </div>
+        <div style={{paddingLeft: '3%', marginBottom: 20, paddingRight: '3%', backgroundColor: '#000', height: 'auto'}}>
+        <BottomContainer>
+            <Grid container spacing={3}>
+                <Grid item lg={6} md={6} sm={12} xs={12}>
+                 <BottomLeftInnerContainer style={{backgroundImage: `url(${bottomImg})`}}>
+                  <Mission>MISSION</Mission>
+                 </BottomLeftInnerContainer>
+                </Grid>
+                <Grid item lg={6} md={6} sm={12} xs={12}>
+                    <BottomRightInnerContainer>
+                        <Text>
+                        Our mission is to create transformative digital solutions that enable businesses to suceed in a rapidly changing technological landscape. We deliver innovative software experiences customized to exceed our clients unique needs.
+                        </Text>
+                    </BottomRightInnerContainer>
+                </Grid>
+            </Grid>
+        </BottomContainer>
+        </div>
+        <Footer />
     </StyledBox>
   )
 }
