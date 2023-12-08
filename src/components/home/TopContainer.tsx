@@ -70,7 +70,9 @@ margin-top: 15%;
   margin-top: 30%;
 }
 `
-const Content = styled.div`
+const Content = styled.h3`
+display: flex;
+align-items: center;
 color: #FFF;
 font-family: Puritan;
 font-size: 16px;
@@ -95,6 +97,10 @@ fill: #F00;
 stroke-width: 1.4px;
 stroke: #000;
 margin-right: 5px;
+@media screen and (max-width: 600px) {
+width: 6px;
+height: 6px;
+}
 ` 
 const ContentHeader = styled.div`
 color: #FFF;
@@ -115,7 +121,10 @@ letter-spacing: -0.627px;
   }
 `
 
-function TopContainer() {
+function TopContainer(props: {formData: any, setFormData: any, sendEmail: any}) {
+  const formData = props.formData;
+  const setFormData = props.setFormData;
+  const sendEmail = props.sendEmail
 
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
 const images = [image1, image2, image3, image4]
@@ -134,7 +143,7 @@ useEffect(() => {
     <StyledBox style={{
         backgroundImage: `url(${images[currentImageIndex]})`
       }}>
-        <HomeNavBar />
+        <HomeNavBar sendEmail={sendEmail}  formData={formData} setFormData={setFormData} />
      <StyledContainer className="content-slider">
         { currentImageIndex === 0 &&
         <WebDevContainer>

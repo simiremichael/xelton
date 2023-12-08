@@ -16,10 +16,15 @@ const StyledBox = styled(Box)`
 
 // `
 
-function Home() {
+function Home(props: {formData: any, setFormData: any, sendEmail: any}) {
+
+    const formData = props.formData;
+  const setFormData = props.setFormData;
+  const sendEmail = props.sendEmail
+
   return (
     <StyledBox>
-        <TopContainer />
+        <TopContainer sendEmail={sendEmail}  formData={formData} setFormData={setFormData} />
         <WhatWeDo />
         <WhyChooseUs />
         <MiddleContainer />
