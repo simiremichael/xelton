@@ -4,14 +4,14 @@ import Home from './pages/Home'
 import About from './pages/About'
 import Contact from './pages/Contact'
 import Privacy from './pages/Privacy'
-import React, { useRef } from 'react'
+import React from 'react'
 import emailjs from '@emailjs/browser';
 
 function App() {
   const InitialValue = { name: '', email: '', phone: '', message: ''}
 
   const [formData, setFormData] = React.useState(InitialValue)
-  const formRef = useRef();
+
   const sendEmail = (e: any) => {
        
     if(formData.name.trim()==="" || formData.email.trim() ==="" || formData.message.trim() ===""|| formData.phone.trim() ===""){
