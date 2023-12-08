@@ -38,7 +38,7 @@ function App() {
    <Route path='/' element={<Home sendEmail={sendEmail} formData={formData} setFormData={setFormData}/>}></Route>
    <Route path='/about' element={<About sendEmail={sendEmail}  formData={formData} setFormData={setFormData}/>}></Route>
    <Route path='/contact' element={<Contact sendEmail={sendEmail}  formData={formData} setFormData={setFormData}/>}></Route>
-   <Route path='/privacy' element={<Privacy/>}></Route>
+   <Route path='/privacy' element={<Privacy sendEmail={sendEmail} formData={formData} setFormData={setFormData}/>}></Route>
     </Routes>
       </div>
     </>

@@ -75,12 +75,16 @@ margin: 8px 0;
 }
 `
 
-function Privacy() {
+function Privacy(props: {formData: any, setFormData: any, sendEmail: any}) {
+
+  const formData = props.formData;
+  const setFormData = props.setFormData;
+const sendEmail = props.sendEmail
 
     const text = 'Privacy Policy'
   return (
     <StyledBox>
-         <NavBar />
+         <NavBar sendEmail={sendEmail} formData={formData} setFormData={setFormData} />
          <SvgContainer text={text} />
           <StyledContainer>
             <TextContainer>
