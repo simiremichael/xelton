@@ -52,7 +52,7 @@ line-height: normal;
 letter-spacing: -0.33px;
 display: flex;
 align-items: center;
-@media screen and (min-width: 600px) {
+@media screen and (max-width: 600px) {
   font-size: 16px;
 }
 `
