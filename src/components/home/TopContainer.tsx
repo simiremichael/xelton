@@ -10,7 +10,8 @@ import ellipse from '../../assets/Ellipse1.svg'
 import HomeNavBar from '../navbar/HomeNavBar';
 
 const StyledBox = styled(Box)`
-  width: 100%;            
+  width: 100%;  
+  background-color: #000;          
   background-position: center; 
   background-repeat: repeat;
   background-size: 100% 100%;
