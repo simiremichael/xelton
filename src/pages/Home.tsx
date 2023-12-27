@@ -27,8 +27,8 @@ function Home(props: {formData: any, setFormData: any, sendEmail: any}) {
         <TopContainer sendEmail={sendEmail}  formData={formData} setFormData={setFormData} />
         <WhatWeDo />
         <WhyChooseUs />
-        <MiddleContainer />
-        <BottomContainer />
+        <MiddleContainer sendEmail={sendEmail}  formData={formData} setFormData={setFormData} />
+        <BottomContainer sendEmail={sendEmail}  formData={formData} setFormData={setFormData} />
         <Footer />
     </StyledBox>
   )
