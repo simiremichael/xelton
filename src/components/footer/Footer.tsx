@@ -216,7 +216,7 @@ function Footer() {
             </Grid>
             <Grid item lg={12} md={12} sm={12} xs={12}>
                 <InnerContainer style={{display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', marginTop: 15}}>
-                    <Copyright>{`© Copyright ${new Date().getFullYear()} Xelton Technology Company (Nig.) Ltd`}</Copyright>
+                    <Copyright>{`© Copyright ${new Date().getFullYear()} Xelton Technology (Nig.) Ltd`}</Copyright>
                 </InnerContainer>
             </Grid>
         </Grid>
