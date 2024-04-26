@@ -7,7 +7,6 @@ import SvgContainer from "../components/SvgContainer";
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import CallIcon from '@mui/icons-material/Call';
 import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
-import {Helmet} from "react-helmet";
 
 
 const StyledBox = styled(Box)`
