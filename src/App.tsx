@@ -26,17 +26,17 @@ function App() {
         alert("required all field");
       }
       else{
-    
-      setFormData(InitialValue)
-
-        emailjs.sendForm('service_vxr70ia', 'template_owjmkcc', 'user_OjPcBuLBsMA0wASXXMw7Z')
-      .then((result) => {
-          console.log(result.text);
-      }, (error) => {
-          console.log(error.text);
+        emailjs.sendForm('service_vxr70ia', 'template_owjmkcc', formData, {
+          publicKey: 'user_OjPcBuLBsMA0wASXXMw7Z',
+        })
+      .then(() => {
+          console.log('SUCCESS');
+      }, (error: any) => {
+          console.log('FAIL...', error.text);
       });
       alert('Email sent');
-      e.target.reset();
+      // e.target.reset();
+      setFormData(InitialValue)
       }
     }
   return (
