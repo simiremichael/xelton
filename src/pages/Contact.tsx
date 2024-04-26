@@ -161,7 +161,7 @@ const form = props.form;
   const text = 'Contact'
   return (
     <StyledBox>
-        <NavBar sendEmail={sendEmail} formData={formData} setFormData={setFormData} />
+        <NavBar sendEmail={sendEmail} formData={formData} setFormData={setFormData} form={form} />
         <SvgContainer text={text} />
         <StyledContainer>
           <Grid container spacing={2}>

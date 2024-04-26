@@ -26,6 +26,7 @@ function App() {
         alert("required all field");
       }
       else{
+        // @ts-ignore
         emailjs.sendForm('service_vxr70ia', 'template_owjmkcc', form.current, 'user_OjPcBuLBsMA0wASXXMw7Z')
       .then(() => {
           console.log('SUCCESS');
