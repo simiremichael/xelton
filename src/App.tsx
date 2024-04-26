@@ -6,6 +6,8 @@ import Contact from './pages/Contact'
 import Privacy from './pages/Privacy'
 import React from 'react'
 import emailjs from '@emailjs/browser';
+ import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   const InitialValue = { name: '', email: '', phone: '', message: ''}
@@ -33,7 +35,7 @@ function App() {
       }, (error: any) => {
           console.log('FAIL...', error.text);
       });
-      alert('Email sent');
+      toast('Message sent');
       // e.target.reset();
       setFormData(InitialValue)
       }
@@ -47,6 +49,7 @@ function App() {
    <Route path='/contact' element={<Contact sendEmail={sendEmail} form={form} formData={formData} setFormData={setFormData}/>}></Route>
    <Route path='/privacy' element={<Privacy sendEmail={sendEmail} form={form} formData={formData} setFormData={setFormData}/>}></Route>
     </Routes>
+    <ToastContainer />
       </div>
     </>
   )
