@@ -235,11 +235,12 @@ const style = {
   p: 4,
 };
 
-function HomeNavBar(props: {formData: any, setFormData: any, sendEmail: any}) {
+function HomeNavBar(props: {formData: any, setFormData: any, sendEmail: any, form: any}) {
 
   const formData = props.formData;
   const setFormData = props.setFormData;
   const sendEmail = props.sendEmail;
+  const form = props.form;
 
     const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
@@ -305,13 +306,14 @@ const handleHire = () => {
           {/* <Grid container spacing={2}>
             <Grid item lg={2.5} md={2.5} sm={2} xs={0}></Grid>
             <Grid item lg={7} md={7} sm={8} xs={12}> */}
-            <ModalContainer style={style} onSubmit={sendEmail}>
+            <ModalContainer style={style} ref={form} onSubmit={sendEmail}>
               <CloseIconContainer><HighlightOffOutlinedIcon onClick={handleCloseModal} style={{fontSize: 24, cursor: 'pointer', color: '#000', marginTop: 15, marginRight: 15}} /></CloseIconContainer>
             <Title>Share your ideas with us, and we will get in touch quickly.</Title>
             <Label>Full Name</Label>
             <TextFields
           required
-          id="outlined-required"
+           name='name'
+          id="name"
           label="Full Name"
           value={formData.name}
           fullWidth
@@ -321,7 +323,8 @@ const handleHire = () => {
          <Label>Email</Label>
          <TextFields
           required
-          id="outlined-required"
+          name='email'
+          id="email"
           label="Email"
           value={formData.email}
           fullWidth
@@ -331,7 +334,8 @@ const handleHire = () => {
            <Label>Phone</Label>
           <TextFields
           required
-          id="outlined-required"
+          name='phone'
+          id="phone"
           type='number'
           label="Phone"
           value={formData.phone}
@@ -341,7 +345,8 @@ const handleHire = () => {
           />
            <Label>Message</Label>
           <TextFields
-          id="outlined-multiline-static"
+          id="message"
+          name='message'
           label="Message"
           multiline
           fullWidth

@@ -16,19 +16,20 @@ const StyledBox = styled(Box)`
 
 // `
 
-function Home(props: {formData: any, setFormData: any, sendEmail: any}) {
+function Home(props: {formData: any, setFormData: any, sendEmail: any, form: any}) {
 
     const formData = props.formData;
   const setFormData = props.setFormData;
   const sendEmail = props.sendEmail
+  const form = props.form
 
   return (
     <StyledBox>
-        <TopContainer sendEmail={sendEmail}  formData={formData} setFormData={setFormData} />
+        <TopContainer sendEmail={sendEmail}  formData={formData} setFormData={setFormData}  form={form} />
         <WhatWeDo />
         <WhyChooseUs />
-        <MiddleContainer sendEmail={sendEmail}  formData={formData} setFormData={setFormData} />
-        <BottomContainer sendEmail={sendEmail}  formData={formData} setFormData={setFormData} />
+        <MiddleContainer sendEmail={sendEmail}  formData={formData} setFormData={setFormData} form={form} />
+        <BottomContainer sendEmail={sendEmail}  formData={formData} setFormData={setFormData} form={form} />
         <Footer />
     </StyledBox>
   )

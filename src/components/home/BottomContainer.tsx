@@ -204,11 +204,12 @@ const style = {
   p: 4,
 };
 
-function BottomContainer(props: {formData: any, setFormData: any, sendEmail: any}) {
+function BottomContainer(props: {formData: any, setFormData: any, sendEmail: any, form: any}) {
 
   const formData = props.formData;
   const setFormData = props.setFormData;
   const sendEmail = props.sendEmail
+  const form = props.form
 
 
   const [openModal, setOpenModal] = React.useState(false);
@@ -242,13 +243,14 @@ function BottomContainer(props: {formData: any, setFormData: any, sendEmail: any
           {/* <Grid container spacing={2}>
             <Grid item lg={2.5} md={2.5} sm={2} xs={0}></Grid>
             <Grid item lg={7} md={7} sm={8} xs={12}> */}
-            <ModalContainer style={style} onSubmit={sendEmail}>
+            <ModalContainer style={style} ref={form} onSubmit={sendEmail}>
               <CloseIconContainer><HighlightOffOutlinedIcon onClick={handleCloseModal} style={{fontSize: 24, cursor: 'pointer', color: '#000', marginTop: 15, marginRight: 15}} /></CloseIconContainer>
             <Title>Share your ideas with us, and we will get in touch quickly.</Title>
             <Label>Full Name</Label>
             <TextFields
           required
-          id="outlined-required"
+          id="name"
+          name='name'
           label="Full Name"
           value={formData.name}
           fullWidth
@@ -258,7 +260,8 @@ function BottomContainer(props: {formData: any, setFormData: any, sendEmail: any
          <Label>Email</Label>
          <TextFields
           required
-          id="outlined-required"
+          id="email"
+          name='email'
           label="Email"
           value={formData.email}
           fullWidth
@@ -268,7 +271,8 @@ function BottomContainer(props: {formData: any, setFormData: any, sendEmail: any
            <Label>Phone</Label>
           <TextFields
           required
-          id="outlined-required"
+          id="phone"
+          name='phone'
           label="Phone"
           type='number'
           value={formData.phone}
@@ -278,7 +282,8 @@ function BottomContainer(props: {formData: any, setFormData: any, sendEmail: any
           />
            <Label>Message</Label>
           <TextFields
-          id="outlined-multiline-static"
+          id="message"
+          name='message'
           label="Message"
           multiline
           fullWidth

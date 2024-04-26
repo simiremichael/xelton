@@ -10,26 +10,23 @@ import emailjs from '@emailjs/browser';
 function App() {
   const InitialValue = { name: '', email: '', phone: '', message: ''}
 
-  const [formData, setFormData] = React.useState(InitialValue)
+   const [formData, setFormData] = React.useState(InitialValue)
 
-//   let templateParams = {
-//     name: formData.name,
-//     email: formData.email,
-//     phone: formData.phone,
-//     message: formData.message
-// };
+   const form = React.useRef();
+
+// useEffect(() => {
+// emailjs.init('user_OjPcBuLBsMA0wASXXMw7Z')
+// }, [])
 // 'user_OjPcBuLBsMA0wASXXMw7Z'
   const sendEmail = (e: any) => {
+    console.log(e.target)
     e.preventDefault();
        
     if(formData.name.trim()==="" || formData.email.trim() ==="" || formData.message.trim() ===""|| formData.phone.trim() ===""){
         alert("required all field");
       }
       else{
-        /* @ts-ignore */
-        emailjs.sendForm('service_vxr70ia', 'template_owjmkcc', formData, {
-          publicKey: 'user_OjPcBuLBsMA0wASXXMw7Z',
-        })
+        emailjs.sendForm('service_vxr70ia', 'template_owjmkcc', form.current, 'user_OjPcBuLBsMA0wASXXMw7Z')
       .then(() => {
           console.log('SUCCESS');
       }, (error: any) => {
@@ -44,10 +41,10 @@ function App() {
     <>
       <div>
       <Routes>
-   <Route path='/' element={<Home sendEmail={sendEmail} formData={formData} setFormData={setFormData}/>}></Route>
-   <Route path='/about' element={<About sendEmail={sendEmail}  formData={formData} setFormData={setFormData}/>}></Route>
-   <Route path='/contact' element={<Contact sendEmail={sendEmail}  formData={formData} setFormData={setFormData}/>}></Route>
-   <Route path='/privacy' element={<Privacy sendEmail={sendEmail} formData={formData} setFormData={setFormData}/>}></Route>
+   <Route path='/' element={<Home sendEmail={sendEmail} form={form} formData={formData} setFormData={setFormData}/>}></Route>
+   <Route path='/about' element={<About sendEmail={sendEmail} form={form}  formData={formData} setFormData={setFormData}/>}></Route>
+   <Route path='/contact' element={<Contact sendEmail={sendEmail} form={form} formData={formData} setFormData={setFormData}/>}></Route>
+   <Route path='/privacy' element={<Privacy sendEmail={sendEmail} form={form} formData={formData} setFormData={setFormData}/>}></Route>
     </Routes>
       </div>
     </>

@@ -171,15 +171,16 @@ letter-spacing: -0.264px;
 }
 `
 
-function About(props: {formData: any, setFormData: any, sendEmail: any}) {
+function About(props: {formData: any, setFormData: any, sendEmail: any, form: any}) {
     const formData = props.formData;
     const setFormData = props.setFormData;
     const sendEmail = props.sendEmail
+    const form = props.form
 const text = "About Us"
 
   return (
     <StyledBox>
-        <NavBar sendEmail={sendEmail}  formData={formData} setFormData={setFormData} />
+        <NavBar sendEmail={sendEmail}  formData={formData} setFormData={setFormData} form={form} />
         <SvgContainer text={text} />
         <TopContainer>
             <Grid container spacing={4}>

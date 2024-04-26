@@ -122,10 +122,11 @@ letter-spacing: -0.627px;
   }
 `
 
-function TopContainer(props: {formData: any, setFormData: any, sendEmail: any}) {
+function TopContainer(props: {formData: any, setFormData: any, sendEmail: any, form: any}) {
   const formData = props.formData;
   const setFormData = props.setFormData;
   const sendEmail = props.sendEmail
+  const form = props.form
 
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
 const images = [image1, image2, image3, image4]
@@ -144,7 +145,7 @@ useEffect(() => {
     <StyledBox style={{
         backgroundImage: `url(${images[currentImageIndex]})`
       }}>
-        <HomeNavBar sendEmail={sendEmail}  formData={formData} setFormData={setFormData} />
+        <HomeNavBar sendEmail={sendEmail}  formData={formData} setFormData={setFormData} form={form} />
      <StyledContainer className="content-slider">
         { currentImageIndex === 0 &&
         <WebDevContainer>
