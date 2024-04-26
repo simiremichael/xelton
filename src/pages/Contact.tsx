@@ -186,7 +186,7 @@ const form = props.form;
           required
           id="name"
           type="text"
-          name="user_name"
+          name="name"
           autoComplete='off'
           label="Full Name"
           value={formData.name}
