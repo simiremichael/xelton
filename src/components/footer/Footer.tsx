@@ -209,8 +209,12 @@ function Footer() {
             <Grid item lg={4} md={4} sm={12} xs={12}>
                 <InnerContainer style={{display: 'flex', flexDirection: 'column', justifyContent: 'center'}}>
                     <Heading>Contact Us</Heading>
+                    <a style={{textDecoration: 'none'}} href='mailto:sales@xeltontechnologies.com.ng'>
                     <Email><EmailIcon /> sales@xeltontechnologies.com.ng</Email>
+                    </a>
+                    <a style={{textDecoration: 'none'}} href='tel:08067253462'>
                     <Phone><PhoneIcon /> +2348067253462</Phone>
+                    </a>
                     <Address><AddressIcon /> 52 Agungi Ajiran Road, Lekki, Lagos, Nigeria</Address>
                 </InnerContainer>
             </Grid>

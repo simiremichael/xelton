@@ -12,7 +12,15 @@ function App() {
 
   const [formData, setFormData] = React.useState(InitialValue)
 
+//   let templateParams = {
+//     name: formData.name,
+//     email: formData.email,
+//     phone: formData.phone,
+//     message: formData.message
+// };
+// 'user_OjPcBuLBsMA0wASXXMw7Z'
   const sendEmail = (e: any) => {
+    e.preventDefault();
        
     if(formData.name.trim()==="" || formData.email.trim() ==="" || formData.message.trim() ===""|| formData.phone.trim() ===""){
         alert("required all field");

@@ -7,6 +7,7 @@ import SvgContainer from "../components/SvgContainer";
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import CallIcon from '@mui/icons-material/Call';
 import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
+import {Helmet} from "react-helmet";
 
 
 const StyledBox = styled(Box)`
@@ -155,6 +156,32 @@ const sendEmail = props.sendEmail
   
   const text = 'Contact'
   return (
+    <>
+    {/* <Helmet>
+      <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+                <script type="text/javascript">
+                    (function() {
+            // https://dashboard.emailjs.com/admin/account
+            emailjs.init('YOUR_PUBLIC_KEY')
+        })()
+                  </script>
+                   <script type="text/javascript">
+        window.onload = function() {
+            document.getElementById('contact-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+                // generate a five digit number for the contact_number variable
+                this.contact_number.value = Math.random() * 100000 | 0;
+                // these IDs from the previous steps
+                emailjs.sendForm('contact_service', 'contact_form', this)
+                    .then(function() {
+                        console.log('SUCCESS!');
+                    }, function(error) {
+                        console.log('FAILED...', error)
+                    })
+            })
+        }
+    </script>
+            </Helmet> */}
     <StyledBox>
         <NavBar sendEmail={sendEmail} formData={formData} setFormData={setFormData} />
         <SvgContainer text={text} />
@@ -163,13 +190,18 @@ const sendEmail = props.sendEmail
             <Grid item lg={6} md={6} sm={12} xs={12}>
               <LeftContainer>
               <Title>General Inquiries</Title>
+              <a style={{textDecoration: 'none'}} href='mailto:sales@xeltontechnologies.com.ng'>
               <LeftText><EmailIcon /> sales@xeltontechnologies.com.ng</LeftText>
+              </a>
+          <h3>Tel:</h3>
+          <a style={{textDecoration: 'none'}} href='tel:08067253462'>
               <LeftText><PhoneIcon /> +2348067253462</LeftText>
+              </a>
               <LeftText><AddressIcon /> 52 Agungi Ajiran Road, Lekki Lagos, Nigeria</LeftText>
               </LeftContainer>
             </Grid>
             <Grid item lg={6} md={6} sm={12} xs={12}>
-            <RightContainer onSubmit={sendEmail}>
+            <RightContainer onSubmit={sendEmail} id="contact-form">
             <Title style={{textAlign: 'center', marginTop: 0}}>Contact Us</Title>
             <Label>Full Name</Label>
             <TextFields
@@ -221,6 +253,7 @@ const sendEmail = props.sendEmail
         </StyledContainer>
         <Footer />
     </StyledBox>
+    </>
   )
 }
 
