@@ -56,7 +56,7 @@ align-items: center;
   font-size: 16px;
 }
 `
-const RightContainer = styled.form`
+const RightContainer = styled.div`
 height: auto;
 padding: 10px;
 border-radius: 20px;
@@ -200,12 +200,16 @@ const sendEmail = props.sendEmail
               </LeftContainer>
             </Grid>
             <Grid item lg={6} md={6} sm={12} xs={12}>
-            <RightContainer onSubmit={sendEmail} id="contact-form">
+            <RightContainer>
             <Title style={{textAlign: 'center', marginTop: 0}}>Contact Us</Title>
+            <form onSubmit={sendEmail}>
             <Label>Full Name</Label>
             <TextFields
           required
-          id="outlined-required"
+          id="name"
+          type="text"
+          name="user_name"
+          autoComplete='off'
           label="Full Name"
           value={formData.name}
           fullWidth
@@ -215,8 +219,11 @@ const sendEmail = props.sendEmail
          <Label>Email</Label>
          <TextFields
           required
-          id="outlined-required"
+          id="email"
           label="Email"
+          name="user_email"
+          autoComplete='off'
+          type="email"
           value={formData.email}
           fullWidth
           size="small"
@@ -225,9 +232,11 @@ const sendEmail = props.sendEmail
            <Label>Phone</Label>
           <TextFields
           required
-          id="outlined-required"
+          id="number"
           label="Phone"
+          autoComplete='off'
           type="number"
+          name="number"
           value={formData.phone}
           fullWidth
           size="small"
@@ -235,8 +244,11 @@ const sendEmail = props.sendEmail
           />
            <Label>Message</Label>
           <TextFields
-          id="outlined-multiline-static"
+          id="message"
+          type="text"
+          autoComplete='off'
           label="Message"
+          name="message"
           multiline
           fullWidth
           rows={4}
@@ -246,6 +258,7 @@ const sendEmail = props.sendEmail
         <BtnContainer>
         <SubmitBtn value='send' type='submit'>Submit</SubmitBtn>
         </BtnContainer>
+        </form>
          </RightContainer>
             </Grid>
           </Grid>
