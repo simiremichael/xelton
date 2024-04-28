@@ -7,7 +7,7 @@ import vectorWeb from '../../assets/vector-web.svg'
 import vectorErp from '../../assets/vector-erp.svg'
 import vectorMobile from '../../assets/vector-mobile.svg'
 import vectorUx from '../../assets/vector-ux.svg'
-import { Fade, Slide } from "react-awesome-reveal";
+import { Slide } from "react-awesome-reveal";
 
 
 const StyledBox = styled(Box)`
