@@ -8,6 +8,7 @@ import image3 from '../../assets/mobile.png';
 import image4 from '../../assets/uiux.png';
 import ellipse from '../../assets/Ellipse1.svg'
 import HomeNavBar from '../navbar/HomeNavBar';
+import { Slide } from 'react-awesome-reveal';
 
 const StyledBox = styled(Box)`
   width: 100%;  
@@ -148,28 +149,36 @@ useEffect(() => {
         <HomeNavBar sendEmail={sendEmail}  formData={formData} setFormData={setFormData} form={form} />
      <StyledContainer className="content-slider">
         { currentImageIndex === 0 &&
+        <Slide direction='right'>
         <WebDevContainer>
          <Content><ContentIcon src={ellipse}  />Software Engineering</Content>
          <ContentHeader>Web Development</ContentHeader>
         </WebDevContainer>
+        </Slide>
         }
         {currentImageIndex === 1 &&
+        <Slide direction='right'>
         <ERPContainer>
           <Content><ContentIcon src={ellipse}  />Software Development</Content>
          <ContentHeader>ERP Software</ContentHeader>
         </ERPContainer>
+        </Slide>
           }
           { currentImageIndex === 2 &&
+          <Slide direction='right'>
         <MobileContainer>
           <Content><ContentIcon src={ellipse}  />Mobile Application</Content>
          <ContentHeader>Mobile App Development</ContentHeader>
         </MobileContainer>
+        </Slide>
          }
          { currentImageIndex === 3 &&
+         <Slide direction='right'>
         <UIUXContainer>
           <Content><ContentIcon src={ellipse}  />Design</Content>
          <ContentHeader>User Experience (UI/UX) Design</ContentHeader>
         </UIUXContainer>
+        </Slide>
        }
      </StyledContainer>
     </StyledBox>

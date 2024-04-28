@@ -7,6 +7,7 @@ import vectorWeb from '../../assets/vector-web.svg'
 import vectorErp from '../../assets/vector-erp.svg'
 import vectorMobile from '../../assets/vector-mobile.svg'
 import vectorUx from '../../assets/vector-ux.svg'
+import { Fade, Slide } from "react-awesome-reveal";
 
 
 const StyledBox = styled(Box)`
@@ -65,6 +66,7 @@ background: linear-gradient(0deg, rgba(0, 0, 0, 0.70) 0%, rgba(0, 0, 0, 0.70) 10
   align-items: center;
   gap: 15px;
           }
+          box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
 `
 const CardIcon = styled.img`
 @media screen and (max-width: 600px) {
@@ -123,6 +125,7 @@ letter-spacing: -0.198px;
 `
 
 function WhatWeDo() {
+ 
   return (
     <StyledBox style={{
         backgroundImage: `url(${backImg})`
@@ -131,6 +134,7 @@ function WhatWeDo() {
         <Heading>What We Do To Serve You Best</Heading>
         <Grid container spacing={3} >
          <Grid item lg={6} md={6} sm={6} xs={12}>
+         <Slide direction='up'>
           <Card>
             <CardIcon src={vectorErp} />
             <CardHeader>Custom Software Development</CardHeader>
@@ -138,8 +142,10 @@ function WhatWeDo() {
          <CardContent>Tailored solutions designed to address the specific needs and challenges of your business, ensuring optimal performance and efficiency.</CardContent>
          </CardContentContainer>
           </Card>
+          </Slide>
          </Grid>
          <Grid item lg={6} md={6} sm={6} xs={12}>
+      <Slide direction='up'>
           <Card>
           <CardIcon src={vectorMobile} />
             <CardHeader>Mobile App Development</CardHeader>
@@ -147,8 +153,10 @@ function WhatWeDo() {
          <CardContent>Innovative mobile applications for IOS and Android platforms, combining user-centric design with seamless functionality to engage your target audience.</CardContent>
          </CardContentContainer>
           </Card>
+          </Slide>
          </Grid>
          <Grid item lg={6} md={6} sm={6} xs={12}>
+          <Slide direction='up'>
           <Card>
           <CardIcon src={vectorWeb} />
             <CardHeader>Web Development</CardHeader>
@@ -156,8 +164,10 @@ function WhatWeDo() {
          <CardContent>Robust and scalable web solutions, from dynamic websites to complex web applications, crafted to enhance your online presence and business growth.</CardContent>
          </CardContentContainer>
           </Card>
+          </Slide>
          </Grid>
          <Grid item lg={6} md={6} sm={6} xs={12}>
+          <Slide direction='up'>
           <Card>
           <CardIcon src={vectorUx} />
             <CardHeader>UI/UX Design</CardHeader>
@@ -165,6 +175,7 @@ function WhatWeDo() {
          <CardContent>Intuitive and visually appealing user interfaces, coupled with a focus on user experience, to ensure that your software not only flawlessly but is a pleasure to use.</CardContent>
          </CardContentContainer>
           </Card>
+          </Slide>
          </Grid>
         </Grid>
         </StyledContainer>
