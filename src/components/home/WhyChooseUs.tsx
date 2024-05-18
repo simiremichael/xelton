@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import whyGif from '../../assets/why-gif.gif'
-
+import { Fade} from 'react-awesome-reveal';
 
 const StyledBox = styled(Box)`
 flex-shrink: 0;
@@ -167,6 +167,7 @@ function WhyChooseUs() {
     <StyledBox style={{
         backgroundImage: `url(${whyGif})`
     }}>
+      <Fade duration={5000}>
         <StyledContainer>
           <Heading>Why Choose Us</Heading>
           <InnerContainer>
@@ -185,7 +186,8 @@ function WhyChooseUs() {
            <MobileNumberContainer><MobileNumber>5</MobileNumber><MobileDivider></MobileDivider><MobileNumberContent>End-to-End Solution</MobileNumberContent></MobileNumberContainer>
            </InnderDetailsMobileContainer>
           </InnerContainer>
-        </StyledContainer>
+           </StyledContainer>
+          </Fade>
     </StyledBox>
   )
 }

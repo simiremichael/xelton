@@ -8,7 +8,7 @@ import image3 from '../../assets/mobile.png';
 import image4 from '../../assets/uiux.png';
 import ellipse from '../../assets/Ellipse1.svg'
 import HomeNavBar from '../navbar/HomeNavBar';
-import { Slide } from 'react-awesome-reveal';
+import {Zoom } from 'react-awesome-reveal';
 
 const StyledBox = styled(Box)`
   width: 100%;  
@@ -149,36 +149,36 @@ useEffect(() => {
         <HomeNavBar sendEmail={sendEmail}  formData={formData} setFormData={setFormData} form={form} />
      <StyledContainer className="content-slider">
         { currentImageIndex === 0 &&
-        <Slide direction='right'>
+        <Zoom  duration={2000}>
         <WebDevContainer>
          <Content><ContentIcon src={ellipse}  />Software Engineering</Content>
          <ContentHeader>Web Development</ContentHeader>
         </WebDevContainer>
-        </Slide>
+        </Zoom>
         }
         {currentImageIndex === 1 &&
-        <Slide direction='right'>
+        <Zoom  duration={2000}>
         <ERPContainer>
           <Content><ContentIcon src={ellipse}  />Software Development</Content>
          <ContentHeader>ERP Software</ContentHeader>
         </ERPContainer>
-        </Slide>
+        </Zoom>
           }
           { currentImageIndex === 2 &&
-          <Slide direction='right'>
+          <Zoom  duration={2000}>
         <MobileContainer>
           <Content><ContentIcon src={ellipse}  />Mobile Application</Content>
          <ContentHeader>Mobile App Development</ContentHeader>
         </MobileContainer>
-        </Slide>
+        </Zoom>
          }
          { currentImageIndex === 3 &&
-         <Slide direction='right'>
+         <Zoom  duration={2000}>
         <UIUXContainer>
           <Content><ContentIcon src={ellipse}  />Design</Content>
          <ContentHeader>User Experience (UI/UX) Design</ContentHeader>
         </UIUXContainer>
-        </Slide>
+        </Zoom>
        }
      </StyledContainer>
     </StyledBox>

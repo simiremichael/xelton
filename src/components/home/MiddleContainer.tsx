@@ -5,6 +5,8 @@ import Container from '@mui/material/Container';
 import img from '../../assets/virtual-img.png';
 import HighlightOffOutlinedIcon from '@mui/icons-material/HighlightOffOutlined';
 import React from 'react';
+import {JackInTheBox} from 'react-awesome-reveal';
+
 
 const StyledBox = styled(Box)`
 width: 100%;
@@ -251,6 +253,7 @@ function MiddleContainer(props: {formData: any, setFormData: any, sendEmail: any
                 </InnerContainer>
             </Grid>
             <Grid item lg={6} md={6} sm={12} xs={12}>
+              <JackInTheBox duration={2000}>
                     <ItemContainer>
                      <Items>
                      We pride ourselves on our commitment to delivery 
@@ -259,6 +262,7 @@ function MiddleContainer(props: {formData: any, setFormData: any, sendEmail: any
                      </Items>
                      <ContactBtn onClick={handleOpenModal}>Connect with us</ContactBtn>
                     </ItemContainer>
+                    </JackInTheBox>
             </Grid>
         </Grid>
         </StyledContainer>
