@@ -5,7 +5,7 @@ import Container from '@mui/material/Container';
 import img from '../../assets/virtual-img.png';
 import HighlightOffOutlinedIcon from '@mui/icons-material/HighlightOffOutlined';
 import React from 'react';
-import {JackInTheBox, Slide} from 'react-awesome-reveal';
+import {Slide} from 'react-awesome-reveal';
 
 
 const StyledBox = styled(Box)`
