@@ -5,7 +5,7 @@ import Container from '@mui/material/Container';
 import img from '../../assets/virtual-img.png';
 import HighlightOffOutlinedIcon from '@mui/icons-material/HighlightOffOutlined';
 import React from 'react';
-import {Slide} from 'react-awesome-reveal';
+import { Slide } from 'react-awesome-reveal';
 
 
 const StyledBox = styled(Box)`
@@ -117,7 +117,7 @@ letter-spacing: -0.462px;
     letter-spacing: -0.297px;
 }
 `
-const EmptyContainer =  styled.div`
+const EmptyContainer = styled.div`
 width: 250px;
 margin-top: 20%;
 position: relative;
@@ -230,8 +230,8 @@ const style = {
   p: 4,
 };
 
-function MiddleContainer(props: {formData: any, setFormData: any, sendEmail: any, form: any}) {
-    const formData = props.formData;
+function MiddleContainer(props: { formData: any, setFormData: any, sendEmail: any, form: any }) {
+  const formData = props.formData;
   const setFormData = props.setFormData;
   const sendEmail = props.sendEmail
   const form = props.form
@@ -244,92 +244,92 @@ function MiddleContainer(props: {formData: any, setFormData: any, sendEmail: any
 
   return (
     <StyledBox>
-        <StyledContainer>
+      <StyledContainer>
         <Grid container>
-            <Grid item lg={6} md={6} sm={12} xs={12}>
-                <InnerContainer>
-                    <EmptyContainer></EmptyContainer>
-                  <Image src={img} />
-                </InnerContainer>
-            </Grid>
-            <Grid item lg={6} md={6} sm={12} xs={12}>
-              {/* <JackInTheBox duration={2000}> */}
-              <Slide direction='left' duration={2000}>
-                    <ItemContainer>
-                     <Items>
-                     We pride ourselves on our commitment to delivery 
-                     high-quality software that goes beyond expectations. 
-                     With a focus on <Span>innovation</Span> and <Span>scalable Technologies</Span>
-                     </Items>
-                     <ContactBtn onClick={handleOpenModal}>Connect with us</ContactBtn>
-                    </ItemContainer>
-                    </Slide>
-                    {/* </JackInTheBox> */}
-            </Grid>
+          <Grid item lg={6} md={6} sm={12} xs={12}>
+            <InnerContainer>
+              <EmptyContainer></EmptyContainer>
+              <Image src={img} />
+            </InnerContainer>
+          </Grid>
+          <Grid item lg={6} md={6} sm={12} xs={12}>
+            {/* <JackInTheBox duration={2000}> */}
+            <Slide direction='right' duration={2000}>
+              <ItemContainer>
+                <Items>
+                  We pride ourselves on our commitment to delivery
+                  high-quality software that goes beyond expectations.
+                  With a focus on <Span>innovation</Span> and <Span>scalable Technologies</Span>
+                </Items>
+                <ContactBtn onClick={handleOpenModal}>Connect with us</ContactBtn>
+              </ItemContainer>
+            </Slide>
+            {/* </JackInTheBox> */}
+          </Grid>
         </Grid>
-        </StyledContainer>
-        <Modal
+      </StyledContainer>
+      <Modal
         open={openModal}
         onClose={handleCloseModal}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-          {/* <Grid container spacing={2}>
+        {/* <Grid container spacing={2}>
             <Grid item lg={2.5} md={2.5} sm={2} xs={0}></Grid>
             <Grid item lg={7} md={7} sm={8} xs={12}> */}
-            <ModalContainer style={style} ref={form} onSubmit={sendEmail}>
-              <CloseIconContainer><HighlightOffOutlinedIcon onClick={handleCloseModal} style={{fontSize: 24, cursor: 'pointer', color: '#000', marginTop: 15, marginRight: 15}} /></CloseIconContainer>
-            <Title>Share your ideas with us, and we will get in touch quickly.</Title>
-            <Label>Full Name</Label>
-            <TextFields
-          required
-          id="name"
-          name= 'name'
-          label="Full Name"
-          value={formData.name}
-          fullWidth
-          size="small"
-          onChange={(e: any) => setFormData({...formData, name: e.target.value})}
-        />
-         <Label>Email</Label>
-         <TextFields
-          required
-          id="email"
-          name='email'
-          label="Email"
-          value={formData.email}
-          fullWidth
-          size="small"
-          onChange={(e: any) => setFormData({...formData, email: e.target.value})}
-          />
-           <Label>Phone</Label>
+        <ModalContainer style={style} ref={form} onSubmit={sendEmail}>
+          <CloseIconContainer><HighlightOffOutlinedIcon onClick={handleCloseModal} style={{ fontSize: 24, cursor: 'pointer', color: '#000', marginTop: 15, marginRight: 15 }} /></CloseIconContainer>
+          <Title>Share your ideas with us, and we will get in touch quickly.</Title>
+          <Label>Full Name</Label>
           <TextFields
-          required
-          id="phone"
-          name='phone'
-          label="Phone"
-          type='number'
-          value={formData.phone}
-          fullWidth
-          size="small"
-          onChange={(e: any) => setFormData({...formData, phone: e.target.value})}
+            required
+            id="name"
+            name='name'
+            label="Full Name"
+            value={formData.name}
+            fullWidth
+            size="small"
+            onChange={(e: any) => setFormData({ ...formData, name: e.target.value })}
           />
-           <Label>Message</Label>
+          <Label>Email</Label>
           <TextFields
-          id="message"
-          name="message"
-          label="Message"
-          multiline
-          fullWidth
-          rows={4}
-          value={formData.message}
-          onChange={(e: any) => setFormData({...formData, message: e.target.value})}
-        />
-        <BtnContainer>
-        <SubmitBtn value='send' type='submit'>Submit</SubmitBtn>
-        </BtnContainer>
-         </ModalContainer>
-            {/* </Grid>
+            required
+            id="email"
+            name='email'
+            label="Email"
+            value={formData.email}
+            fullWidth
+            size="small"
+            onChange={(e: any) => setFormData({ ...formData, email: e.target.value })}
+          />
+          <Label>Phone</Label>
+          <TextFields
+            required
+            id="phone"
+            name='phone'
+            label="Phone"
+            type='number'
+            value={formData.phone}
+            fullWidth
+            size="small"
+            onChange={(e: any) => setFormData({ ...formData, phone: e.target.value })}
+          />
+          <Label>Message</Label>
+          <TextFields
+            id="message"
+            name="message"
+            label="Message"
+            multiline
+            fullWidth
+            rows={4}
+            value={formData.message}
+            onChange={(e: any) => setFormData({ ...formData, message: e.target.value })}
+          />
+          <BtnContainer>
+            <SubmitBtn value='send' type='submit'>Submit</SubmitBtn>
+          </BtnContainer>
+        </ModalContainer>
+        {/* </Grid>
             <Grid item lg={2.5} md={2.5} sm={2} xs={0}></Grid>
           </Grid> */}
       </Modal>
