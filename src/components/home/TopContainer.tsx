@@ -12,7 +12,6 @@ import { Zoom } from "react-awesome-reveal";
 
 const StyledBox = styled(Box)`
   width: 100%;
-  background-color: #000;
   background-position: center;
   background-repeat: repeat;
   background-size: 100% 100%;
@@ -74,7 +73,6 @@ const UIUXContainer = styled.div`
 const Content = styled.h1`
   display: flex;
   align-items: center;
-  color: #fff;
   font-family: Puritan;
   font-size: 16px;
   font-style: normal;
@@ -82,7 +80,6 @@ const Content = styled.h1`
   line-height: normal;
   letter-spacing: -0.264px;
   @media screen and (max-width: 600px) {
-    color: #fff;
     font-family: Puritan;
     font-size: 10px;
     font-style: normal;
@@ -122,11 +119,18 @@ const ContentHeader = styled.div`
   }
 `;
 
+type FormData = {
+  name: string;
+  email: string;
+  phone: string;
+  message: string;
+};
+
 function TopContainer(props: {
-  formData: any;
-  setFormData: any;
-  sendEmail: any;
-  form: any;
+  formData: FormData;
+  setFormData: React.Dispatch<React.SetStateAction<FormData>>;
+  sendEmail: () => void;
+  form: React.RefObject<HTMLFormElement>;
 }) {
   const formData = props.formData;
   const setFormData = props.setFormData;

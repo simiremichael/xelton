@@ -11,12 +11,6 @@ const StyledBox = styled(Box)`
   width: 100%;
   height: 546px;
   flex-shrink: 0;
-  background: linear-gradient(
-      143deg,
-      rgba(0, 0, 0, 0.2) 10.85%,
-      rgba(0, 0, 0, 0.2) 181.83%
-    ),
-    #050507;
   @media screen and (max-width: 900px) {
     height: auto;
   }
@@ -41,12 +35,14 @@ const ItemContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-
+  align-items: center;
+  margin-top: 30%;
   height: 100%;
   @media screen and(min-width: 900px) {
     height: 678px;
     flex-shrink: 0;
     align-items: center;
+    margin-top: 0;
   }
 `;
 const Items = styled.p`
@@ -77,6 +73,10 @@ const ContactBtn = styled.button`
   align-items: center;
   gap: 10px;
   flex-shrink: 0;
+  border-radius: 5px;
+  margin-top: 10px;
+  border: 0.71px solid rgba(255, 0, 0, 1);
+  background: rgba(255, 0, 0, 0.12);
   color: #f00;
   font-family: Puritan;
   font-size: 20px;
@@ -150,6 +150,7 @@ const BtnContainer = styled.div`
   align-items: center;
 `;
 const SubmitBtn = styled.button`
+  margintop: 10px;
   display: flex;
   width: 212px;
   height: 56px;
@@ -160,7 +161,7 @@ const SubmitBtn = styled.button`
   cursor: pointer;
   flex-shrink: 0;
   border-radius: 10px;
-  border: 0.71px solid rgba(255, 0, 0, 0.2);
+  border: 0.71px solid rgba(255, 0, 0, 1);
   background: rgba(255, 0, 0, 0.12);
   color: #f00;
   font-family: Puritan;
@@ -229,7 +230,7 @@ const CloseIconContainer = styled.div`
 `;
 
 const style = {
-  position: "absolute" as "absolute",
+  position: "absolute",
   top: "46%",
   left: "50%",
   transform: "translate(-50%, -50%)",
@@ -237,11 +238,18 @@ const style = {
   p: 4,
 };
 
+type FormDataType = {
+  name: string;
+  email: string;
+  phone: string;
+  message: string;
+};
+
 function MiddleContainer(props: {
-  formData: any;
-  setFormData: any;
-  sendEmail: any;
-  form: any;
+  formData: FormDataType;
+  setFormData: React.Dispatch<React.SetStateAction<FormDataType>>;
+  sendEmail: (e: React.FormEvent<HTMLFormElement>) => void;
+  form: React.RefObject<HTMLFormElement>;
 }) {
   const formData = props.formData;
   const setFormData = props.setFormData;
@@ -289,7 +297,11 @@ function MiddleContainer(props: {
         {/* <Grid container spacing={2}>
             <Grid item lg={2.5} md={2.5} sm={2} xs={0}></Grid>
             <Grid item lg={7} md={7} sm={8} xs={12}> */}
-        <ModalContainer style={style} ref={form} onSubmit={sendEmail}>
+        <ModalContainer
+          style={style as React.CSSProperties}
+          ref={form}
+          onSubmit={sendEmail}
+        >
           <CloseIconContainer>
             <HighlightOffOutlinedIcon
               onClick={handleCloseModal}
@@ -314,7 +326,7 @@ function MiddleContainer(props: {
             value={formData.name}
             fullWidth
             size="small"
-            onChange={(e: any) =>
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
               setFormData({ ...formData, name: e.target.value })
             }
           />
@@ -327,7 +339,7 @@ function MiddleContainer(props: {
             value={formData.email}
             fullWidth
             size="small"
-            onChange={(e: any) =>
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
               setFormData({ ...formData, email: e.target.value })
             }
           />
@@ -341,7 +353,7 @@ function MiddleContainer(props: {
             value={formData.phone}
             fullWidth
             size="small"
-            onChange={(e: any) =>
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
               setFormData({ ...formData, phone: e.target.value })
             }
           />
@@ -354,7 +366,7 @@ function MiddleContainer(props: {
             fullWidth
             rows={4}
             value={formData.message}
-            onChange={(e: any) =>
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
               setFormData({ ...formData, message: e.target.value })
             }
           />

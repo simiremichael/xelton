@@ -10,10 +10,10 @@ import vectorUx from "../../assets/vector-ux.svg";
 import { Slide } from "react-awesome-reveal";
 
 const StyledBox = styled(Box)`
+  width: 100%;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  width: 100%;
   padding-bottom: 20px;
   display: flex;
 `;
@@ -26,7 +26,6 @@ const StyledContainer = styled(Container)`
   align-items: center;
 `;
 const Heading = styled.h3`
-  color: #fff;
   font-family: Puritan;
   font-size: 28px;
   font-style: normal;
@@ -36,7 +35,6 @@ const Heading = styled.h3`
   text-align: center;
   padding-bottom: 20px;
   @media screen and (max-width: 600px) {
-    color: #fff;
     font-family: Puritan;
     font-size: 18px;
     font-style: normal;
@@ -54,12 +52,6 @@ const Card = styled.div`
   justify-content: center;
   align-items: center;
   gap: 15px;
-  background: linear-gradient(
-      0deg,
-      rgba(0, 0, 0, 0.7) 0%,
-      rgba(0, 0, 0, 0.7) 100%
-    ),
-    rgba(255, 255, 255, 0.12);
   @media screen and (max-width: 600px) {
     display: flex;
     width: 100%;

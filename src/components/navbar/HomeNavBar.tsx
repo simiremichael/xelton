@@ -66,7 +66,6 @@ const MenuContainer = styled.div`
   }
 `;
 const MenuItems = styled.p`
-  color: #fff;
   font-family: Puritan;
   font-size: 16px;
   font-style: normal;
@@ -114,7 +113,6 @@ const StyledLink = styled(NavLink)`
 `;
 const StyledLinks = styled(NavLink)`
   text-decoration: none;
-  color: #050507;
   font-family: Puritan;
   font-size: 16px;
   font-style: normal;
@@ -141,7 +139,6 @@ const ModalContainer = styled.form`
   height: auto;
   padding: 10px;
   border-radius: 20px;
-  background: #fff;
   margin: 20px 0;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25),
     0px 2.3px 2px 0px rgba(0, 0, 0, 0.18);
@@ -163,7 +160,7 @@ const SubmitBtn = styled.button`
   cursor: pointer;
   flex-shrink: 0;
   border-radius: 10px;
-  border: 0.71px solid rgba(255, 0, 0, 0.2);
+  border: 0.71px solid rgba(255, 0, 0, 1);
   background: rgba(255, 0, 0, 0.12);
   color: #f00;
   font-family: Puritan;
@@ -185,11 +182,10 @@ const SubmitBtn = styled.button`
   }
 `;
 const TextFields = styled(TextField)`
-  background: rgba(217, 217, 217, 0.4);
+  background: rgba(217, 217, 217, 1);
   margin: 5px 0 12px 0;
 `;
 const Label = styled.label`
-  color: #000;
   font-family: Puritan;
   font-size: 20px;
   font-style: normal;
@@ -198,7 +194,6 @@ const Label = styled.label`
   letter-spacing: -0.33px;
   text-align: start;
   @media screen and (max-width: 600px) {
-    color: #000;
     font-family: Puritan;
     font-size: 14px;
     font-style: normal;
@@ -208,7 +203,6 @@ const Label = styled.label`
   }
 `;
 const Title = styled.h3`
-  color: #050507;
   font-family: Puritan;
   font-size: 26px;
   margin: 0 0 10px 0;
@@ -217,7 +211,6 @@ const Title = styled.h3`
   line-height: normal;
   letter-spacing: -0.462px;
   @media screen and (max-width: 600px) {
-    color: #050507;
     font-family: Puritan;
     font-size: 18px;
     font-style: normal;
@@ -231,20 +224,27 @@ const CloseIconContainer = styled.div`
   justify-content: flex-end;
 `;
 
-const style = {
-  position: "absolute" as "absolute",
+const style: React.CSSProperties = {
+  position: "absolute",
   top: "46%",
   left: "50%",
   transform: "translate(-50%, -50%)",
   minWidth: 240,
-  p: 4,
+  padding: 32, // 4 * 8px (MUI spacing unit)
+};
+
+type FormData = {
+  name: string;
+  email: string;
+  phone: string;
+  message: string;
 };
 
 function HomeNavBar(props: {
-  formData: any;
-  setFormData: any;
-  sendEmail: any;
-  form: any;
+  formData: FormData;
+  setFormData: React.Dispatch<React.SetStateAction<FormData>>;
+  sendEmail: (event: React.FormEvent<HTMLFormElement>) => void;
+  form: React.RefObject<HTMLFormElement>;
 }) {
   const formData = props.formData;
   const setFormData = props.setFormData;
@@ -340,7 +340,12 @@ function HomeNavBar(props: {
         {/* <Grid container spacing={2}>
             <Grid item lg={2.5} md={2.5} sm={2} xs={0}></Grid>
             <Grid item lg={7} md={7} sm={8} xs={12}> */}
-        <ModalContainer style={style} ref={form} onSubmit={sendEmail}>
+        <ModalContainer
+          className="bg-black"
+          style={style}
+          ref={form}
+          onSubmit={sendEmail}
+        >
           <CloseIconContainer>
             <HighlightOffOutlinedIcon
               onClick={handleCloseModal}
@@ -365,7 +370,7 @@ function HomeNavBar(props: {
             value={formData.name}
             fullWidth
             size="small"
-            onChange={(e: any) =>
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
               setFormData({ ...formData, name: e.target.value })
             }
           />
@@ -378,7 +383,7 @@ function HomeNavBar(props: {
             value={formData.email}
             fullWidth
             size="small"
-            onChange={(e: any) =>
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
               setFormData({ ...formData, email: e.target.value })
             }
           />
@@ -392,7 +397,7 @@ function HomeNavBar(props: {
             value={formData.phone}
             fullWidth
             size="small"
-            onChange={(e: any) =>
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
               setFormData({ ...formData, phone: e.target.value })
             }
           />
@@ -405,7 +410,7 @@ function HomeNavBar(props: {
             fullWidth
             rows={4}
             value={formData.message}
-            onChange={(e: any) =>
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
               setFormData({ ...formData, message: e.target.value })
             }
           />
