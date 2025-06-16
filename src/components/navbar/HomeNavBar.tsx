@@ -233,19 +233,14 @@ const style: React.CSSProperties = {
   padding: 32, // 4 * 8px (MUI spacing unit)
 };
 
-type FormData = {
-  name: string;
-  email: string;
-  phone: string;
-  message: string;
-};
+interface HomeProps {
+  formData: any;
+  setFormData: (data: any) => void;
+  sendEmail: (data: any) => void;
+  form: any;
+}
 
-function HomeNavBar(props: {
-  formData: FormData;
-  setFormData: React.Dispatch<React.SetStateAction<FormData>>;
-  sendEmail: (event: React.FormEvent<HTMLFormElement>) => void;
-  form: HTMLFormElement;
-}) {
+function HomeNavBar(props: HomeProps) {
   const formData = props.formData;
   const setFormData = props.setFormData;
   const sendEmail = props.sendEmail;
