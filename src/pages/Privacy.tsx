@@ -3,6 +3,7 @@ import Box from "@mui/material/Box";
 import Footer from "../components/footer/Footer";
 import { Container } from "@mui/material";
 import SvgContainer from "../components/SvgContainer";
+import HomeNavBar from "../components/navbar/HomeNavBar";
 
 const StyledBox = styled(Box)`
   width: 100%;
@@ -64,24 +65,12 @@ const P = styled.p`
   }
 `;
 
-type FormData = {
-  name: string;
-  email: string;
-  phone: string;
-  message: string;
-};
-
-import { RefObject } from "react";
-
-import { Dispatch, SetStateAction } from "react";
-import HomeNavBar from "../components/navbar/HomeNavBar";
-
-type PrivacyProps = {
-  formData: FormData;
-  setFormData: Dispatch<SetStateAction<FormData>>;
-  sendEmail: (...args: unknown[]) => void;
-  form: RefObject<HTMLFormElement>;
-};
+interface PrivacyProps {
+  formData: any;
+  setFormData: (data: any) => void;
+  sendEmail: (data: any) => void;
+  form: any;
+}
 
 function Privacy(props: PrivacyProps) {
   const formData = props.formData;

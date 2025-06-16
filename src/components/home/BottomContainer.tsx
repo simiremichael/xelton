@@ -208,19 +208,14 @@ const style = {
   p: 4,
 };
 
-type FormData = {
-  name: string;
-  email: string;
-  phone: string;
-  message: string;
-};
+interface HomeProps {
+  formData: any;
+  setFormData: (data: any) => void;
+  sendEmail: (data: any) => void;
+  form: any;
+}
 
-function BottomContainer(props: {
-  formData: FormData;
-  setFormData: (data: FormData) => void;
-  sendEmail: (event: React.FormEvent<HTMLFormElement>) => void;
-  form: React.RefObject<HTMLFormElement>;
-}) {
+function BottomContainer(props: HomeProps) {
   const formData = props.formData;
   const setFormData = props.setFormData;
   const sendEmail = props.sendEmail;

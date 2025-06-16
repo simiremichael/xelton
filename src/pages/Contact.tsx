@@ -144,19 +144,11 @@ const AddressIcon = styled(LocationOnOutlinedIcon)`
     font-size: 18px;
   }
 `;
-
-interface ContactFormData {
-  name: string;
-  email: string;
-  phone: string;
-  message: string;
-}
-
 interface ContactProps {
-  formData: ContactFormData;
-  setFormData: React.Dispatch<React.SetStateAction<ContactFormData>>;
-  sendEmail: (event: React.FormEvent<HTMLFormElement>) => void;
-  form: React.RefObject<HTMLFormElement>;
+  formData: any;
+  setFormData: (data: any) => void;
+  sendEmail: (data: any) => void;
+  form: any;
 }
 
 function Contact(props: ContactProps) {

@@ -244,7 +244,7 @@ function HomeNavBar(props: {
   formData: FormData;
   setFormData: React.Dispatch<React.SetStateAction<FormData>>;
   sendEmail: (event: React.FormEvent<HTMLFormElement>) => void;
-  form: React.RefObject<HTMLFormElement>;
+  form: HTMLFormElement;
 }) {
   const formData = props.formData;
   const setFormData = props.setFormData;

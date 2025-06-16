@@ -164,24 +164,16 @@ const Text = styled.p`
   }
 `;
 
-import { Dispatch, SetStateAction } from "react";
-
-import { RefObject } from "react";
 import HomeNavBar from "../components/navbar/HomeNavBar";
 
-interface MyFormData {
-  name: string;
-  email: string;
-  phone: string;
-  message: string;
+interface AboutProps {
+  formData: any;
+  setFormData: (data: any) => void;
+  sendEmail: (data: any) => void;
+  form: any;
 }
 
-function About(props: {
-  formData: MyFormData;
-  setFormData: Dispatch<SetStateAction<MyFormData>>;
-  sendEmail: (...args: unknown[]) => void;
-  form: RefObject<HTMLFormElement>;
-}) {
+function About(props: AboutProps) {
   const formData = props.formData;
   const setFormData = props.setFormData;
   const sendEmail = props.sendEmail;

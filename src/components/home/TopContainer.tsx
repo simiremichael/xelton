@@ -119,19 +119,14 @@ const ContentHeader = styled.div`
   }
 `;
 
-type FormData = {
-  name: string;
-  email: string;
-  phone: string;
-  message: string;
-};
+interface HomeProps {
+  formData: any;
+  setFormData: (data: any) => void;
+  sendEmail: (data: any) => void;
+  form: any;
+}
 
-function TopContainer(props: {
-  formData: FormData;
-  setFormData: React.Dispatch<React.SetStateAction<FormData>>;
-  sendEmail: () => void;
-  form: React.RefObject<HTMLFormElement>;
-}) {
+function TopContainer(props: HomeProps) {
   const formData = props.formData;
   const setFormData = props.setFormData;
   const sendEmail = props.sendEmail;

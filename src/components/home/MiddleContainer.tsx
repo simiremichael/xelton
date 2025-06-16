@@ -238,19 +238,14 @@ const style = {
   p: 4,
 };
 
-type FormDataType = {
-  name: string;
-  email: string;
-  phone: string;
-  message: string;
-};
+interface HomeProps {
+  formData: any;
+  setFormData: (data: any) => void;
+  sendEmail: (data: any) => void;
+  form: any;
+}
 
-function MiddleContainer(props: {
-  formData: FormDataType;
-  setFormData: React.Dispatch<React.SetStateAction<FormDataType>>;
-  sendEmail: (e: React.FormEvent<HTMLFormElement>) => void;
-  form: React.RefObject<HTMLFormElement>;
-}) {
+function MiddleContainer(props: HomeProps) {
   const formData = props.formData;
   const setFormData = props.setFormData;
   const sendEmail = props.sendEmail;

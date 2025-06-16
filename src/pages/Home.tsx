@@ -9,22 +9,12 @@ import Footer from "../components/footer/Footer";
 // import Container from '@mui/material/Container';
 
 const StyledBox = styled(Box)``;
-import type { Dispatch, SetStateAction } from "react";
-
-import type { RefObject } from "react";
-
-interface CustomFormData {
-  name: string;
-  email: string;
-  phone: string;
-  message: string;
-}
 
 interface HomeProps {
-  formData: CustomFormData;
-  setFormData: Dispatch<SetStateAction<CustomFormData>>;
-  sendEmail: (...args: unknown[]) => void;
-  form: RefObject<HTMLFormElement>;
+  formData: any;
+  setFormData: (data: any) => void;
+  sendEmail: (data: any) => void;
+  form: any;
 }
 
 function Home(props: HomeProps) {
