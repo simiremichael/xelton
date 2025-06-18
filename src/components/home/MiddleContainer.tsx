@@ -22,6 +22,7 @@ const InnerContainer = styled.div`
   width: 100%;
   height: 408px;
   flex-shrink: 0;
+  position: relative;
   @media screen and (max-width: 900px) {
     height: 310px;
     flex-shrink: 0;
@@ -30,7 +31,9 @@ const InnerContainer = styled.div`
 const Image = styled.img`
   width: 100%;
   height: 100%;
-  margin-top: -50%;
+  top: -20%;
+  position: absolute;
+  left: 1%;
 `;
 const ItemContainer = styled.div`
   display: flex;
@@ -52,7 +55,7 @@ const Items = styled.p`
   font-weight: 700;
   line-height: normal;
   letter-spacing: -0.462px;
-  margin-top: 35%;
+  margin-top: 25%;
   @media screen and (max-width: 900px) {
     color: #fff;
     font-family: Puritan;
@@ -68,7 +71,7 @@ const ContactBtn = styled.button`
   display: flex;
   width: 212px;
   height: 56px;
-  padding: 10px;
+  padding: 20px;
   cursor: pointer;
   justify-content: center;
   align-items: center;
@@ -127,6 +130,7 @@ const EmptyContainer = styled.div`
   height: 226px;
   flex-shrink: 0;
   border-radius: 315px;
+  position: relative;
   background: linear-gradient(
       180deg,
       rgba(211, 149, 99, 0.2) 0%,
@@ -136,6 +140,15 @@ const EmptyContainer = styled.div`
   filter: blur(166.5px);
   @media screen and (max-width: 900px) {
     height: 180px;
+    filter: blur(146.5px);
+  }
+  @media screen and (max-width: 768px) {
+    height: 160px;
+    filter: blur(106.5px);
+  }
+  @media screen and (max-width: 600px) {
+    height: 140px;
+    filter: blur(86.5px);
   }
 `;
 const ModalContainer = styled.form`
