@@ -5,6 +5,7 @@ import { Container, Grid } from "@mui/material";
 import image from "../assets/about-img.png";
 import bottomImg from "../assets/about-bottom-img.png";
 import Footer from "../components/footer/Footer";
+import HomeNavBar from "../components/navbar/HomeNavBar";
 
 const StyledBox = styled(Box)`
   width: 100%;
@@ -164,8 +165,6 @@ const Text = styled.p`
   }
 `;
 
-import HomeNavBar from "../components/navbar/HomeNavBar";
-
 interface AboutProps {
   formData: any;
   setFormData: (data: any) => void;
@@ -257,7 +256,6 @@ function About(props: AboutProps) {
           paddingLeft: "3%",
           marginBottom: 20,
           paddingRight: "3%",
-          backgroundColor: "#000",
           height: "auto",
         }}
       >

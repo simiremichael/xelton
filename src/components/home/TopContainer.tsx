@@ -2,10 +2,10 @@ import styled from "@emotion/styled";
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 import { useEffect, useState } from "react";
-import image1 from "../../assets/web.png";
-import image2 from "../../assets/erp.png";
-import image3 from "../../assets/mobile.png";
-import image4 from "../../assets/uiux.png";
+import image1 from "../../assets/web.jpg";
+import image2 from "../../assets/erp.webp";
+import image3 from "../../assets/mobile.jpeg";
+import image4 from "../../assets/uiux.jpg";
 import ellipse from "../../assets/Ellipse1.svg";
 import HomeNavBar from "../navbar/HomeNavBar";
 import { Zoom } from "react-awesome-reveal";
@@ -140,7 +140,7 @@ function TopContainer(props: HomeProps) {
       setCurrentImageIndex((prevIndex) =>
         prevIndex === images.length - 1 ? 0 : prevIndex + 1
       );
-    }, 5000); // Change image every 3 seconds (3000 milliseconds)
+    }, 5000); // Change image every 5 seconds (3000 milliseconds)
 
     return () => clearInterval(interval); // Clear interval on component unmount
   }, [images.length]);

@@ -79,7 +79,7 @@ const SubmitBtn = styled.button`
   cursor: pointer;
   flex-shrink: 0;
   border-radius: 10px;
-  border: 0.71px solid rgba(255, 0, 0, 0.2);
+  border: 0.71px solid rgba(255, 0, 0, 1);
   background: rgba(255, 0, 0, 0.12);
   color: #f00;
   font-family: Puritan;

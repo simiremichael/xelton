@@ -65,7 +65,7 @@ const Content = styled.p`
   }
 `;
 const ContactBtn = styled.button`
-  margintop: 10px;
+  margin-top: 10px;
   display: flex;
   width: 212px;
   height: 56px;
@@ -75,7 +75,7 @@ const ContactBtn = styled.button`
   gap: 10px;
   border-radius: 10px;
   border: 0.71px solid rgba(255, 0, 0, 1);
-  background: rgba(255, 0, 0, 0.1);
+  background: rgba(255, 0, 0, 0.12);
   color: #f00;
   font-family: Puritan;
   font-size: 20px;
@@ -83,7 +83,6 @@ const ContactBtn = styled.button`
   font-weight: 700;
   line-height: normal;
   letter-spacing: -0.1px;
-  border: none;
   outlined: none;
   cursor: pointer;
   @media screen and (max-width: 600px) {

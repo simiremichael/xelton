@@ -96,6 +96,8 @@ const Heading = styled.p`
   letter-spacing: -0.33px;
   @media screen and (max-width: 600px) {
     font-size: 14px;
+    margin-bottom: 10px;
+    margin-left: 0px;
   }
 `;
 const Email = styled.p`

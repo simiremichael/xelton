@@ -1,7 +1,6 @@
 import styled from "@emotion/styled";
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
-import backImg from "../../assets/what-we-do.png";
 import { Grid } from "@mui/material";
 import vectorWeb from "../../assets/vector-web.svg";
 import vectorErp from "../../assets/vector-erp.svg";
@@ -55,7 +54,7 @@ const Card = styled.div`
   @media screen and (max-width: 600px) {
     display: flex;
     width: 100%;
-    height: 244px;
+    height: 224px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -112,7 +111,7 @@ const CardContent = styled.p`
     color: rgba(217, 217, 217, 0.79);
     text-align: center;
     font-family: Puritan;
-    font-size: 12px;
+    font-size: 14px;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
@@ -120,13 +119,13 @@ const CardContent = styled.p`
   }
 `;
 
+// style={{
+//   backgroundImage: `url(${backImg})`,
+// }}
+
 function WhatWeDo() {
   return (
-    <StyledBox
-      style={{
-        backgroundImage: `url(${backImg})`,
-      }}
-    >
+    <StyledBox>
       <StyledContainer>
         <Heading>What We Do To Serve You Best</Heading>
         <Grid container spacing={3}>

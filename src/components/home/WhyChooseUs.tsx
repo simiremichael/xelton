@@ -85,8 +85,8 @@ const Divider = styled.div`
   height: 160px;
   position: absolute;
   z-index: 1300;
-  margin-top: 278px;
-  border: 2px dotted #f00;
+  margin-top: 220px;
+  border: 1.5px dotted #f00;
 `;
 const Content = styled.p`
   color: #fff;
@@ -96,7 +96,7 @@ const Content = styled.p`
   font-weight: 700;
   line-height: normal;
   letter-spacing: -0.33px;
-  margin-top: 490px;
+  margin-top: 420px;
   position: absolute;
   @media (max-width: 1080px) {
     font-size: 16px;
@@ -143,7 +143,7 @@ const MobileDivider = styled.div`
   width: 78px;
   position: absolute;
   z-index: 1300;
-  border: 2px dotted #f00;
+  border: 1.5px dotted #f00;
   margin-left: 120px;
 `;
 const MobileNumberContent = styled.p`
@@ -156,18 +156,17 @@ const MobileNumberContent = styled.p`
   letter-spacing: -0.297px;
   position: absolute;
   left: 0;
-  margin-left: 166px;
+  margin-left: 150px;
   width: 20%;
   width: 180px;
 `;
+// style={{
+//   backgroundImage: `url(${whyGif})`,
+// }}
 
 function WhyChooseUs() {
   return (
-    <StyledBox
-      style={{
-        backgroundImage: `url(${whyGif})`,
-      }}
-    >
+    <StyledBox>
       <Fade duration={5000}>
         <StyledContainer>
           <Heading>Why Choose Us</Heading>

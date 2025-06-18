@@ -96,7 +96,6 @@ const MobileHireUsBtn = styled.button`
   padding: 10px;
   justify-content: center;
   align-items: center;
-  gap: 10px;
   color: #f00;
   cursor: pointer;
   border-radius: 10px;
