@@ -234,7 +234,7 @@ const style = {
   top: "46%",
   left: "50%",
   transform: "translate(-50%, -50%)",
-  minWidth: 240,
+  minWidth: 380,
   p: 4,
 };
 

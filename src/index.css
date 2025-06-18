@@ -1,6 +1,6 @@
 @import "tailwindcss";
 @plugin "daisyui" {
-    themes: abyss --default;
+    themes: forest --default;
   }
  
  :root {
