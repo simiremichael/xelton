@@ -16,7 +16,8 @@ const StyledBox = styled(Box)`
   align-items: center;
   gap: 19px;
   padding-bottom: 20px;
-  padding-top: 20px;
+  padding-top: 10px;
+  border-top: 1px solid white;
 `;
 const StyledContainer = styled(Container)`
   height: auto;

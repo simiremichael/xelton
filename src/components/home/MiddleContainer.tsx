@@ -11,6 +11,7 @@ const StyledBox = styled(Box)`
   width: 100%;
   height: 546px;
   flex-shrink: 0;
+  margin-bottom: 15px;
   @media screen and (max-width: 900px) {
     height: auto;
   }
@@ -36,13 +37,11 @@ const ItemContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 30%;
   height: 100%;
   @media screen and(min-width: 900px) {
-    height: 678px;
-    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
     align-items: center;
-    margin-top: 0;
   }
 `;
 const Items = styled.p`
@@ -53,10 +52,12 @@ const Items = styled.p`
   font-weight: 700;
   line-height: normal;
   letter-spacing: -0.462px;
+  margin-top: 35%;
   @media screen and (max-width: 900px) {
     color: #fff;
     font-family: Puritan;
     font-size: 18px;
+    margin-top: 0;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
@@ -133,6 +134,9 @@ const EmptyContainer = styled.div`
     ),
     linear-gradient(180deg, #f00 0%, rgba(227, 40, 40, 0) 100%);
   filter: blur(166.5px);
+  @media screen and (max-width: 900px) {
+    height: 180px;
+  }
 `;
 const ModalContainer = styled.form`
   height: auto;

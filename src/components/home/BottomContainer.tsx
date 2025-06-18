@@ -25,9 +25,10 @@ const InnerContainer = styled.div`
   width: 100%;
   height: 408px;
   flex-shrink: 0;
+  margin-bottom: 10px;
   @media screen and (max-width: 900px) {
-    height: 310px;
-    flex-shrink: 0;
+    margin-top: 10px;
+    height: auto;
   }
 `;
 const Image = styled.img`
