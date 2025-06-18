@@ -60,8 +60,10 @@ const Card = styled.div`
     align-items: center;
     gap: 15px;
   }
-  box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px,
-    rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+  background-color: #222; /* Dark background */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.6); /* Shadow effect */
 `;
 const CardIcon = styled.img`
   @media screen and (max-width: 600px) {

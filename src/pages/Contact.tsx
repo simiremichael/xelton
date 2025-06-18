@@ -20,6 +20,7 @@ const Title = styled.h2`
   font-size: 28px;
   font-style: normal;
   font-weight: 700;
+  margin-bottom: 10px;
   line-height: normal;
   letter-spacing: -0.462px;
   @media screen and (max-width: 600px) {

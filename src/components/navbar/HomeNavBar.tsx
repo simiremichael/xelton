@@ -228,7 +228,7 @@ const style: React.CSSProperties = {
   top: "46%",
   left: "50%",
   transform: "translate(-50%, -50%)",
-  minWidth: 240,
+  minWidth: 340,
   padding: 32, // 4 * 8px (MUI spacing unit)
 };
 

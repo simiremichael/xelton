@@ -91,6 +91,7 @@ const Heading = styled.p`
   font-family: Puritan;
   font-size: 20px;
   font-style: normal;
+  margin-bottom: 10px;
   font-weight: 700;
   line-height: normal;
   letter-spacing: -0.33px;
@@ -234,14 +235,17 @@ function Footer() {
             >
               <Heading>Contact Us</Heading>
               <a
-                style={{ textDecoration: "none" }}
+                style={{ textDecoration: "none", marginBottom: 5 }}
                 href="mailto:sales@xeltontechnologies.com.ng"
               >
                 <Email>
                   <EmailIcon /> sales@xeltontechnologies.com.ng
                 </Email>
               </a>
-              <a style={{ textDecoration: "none" }} href="tel:08067253462">
+              <a
+                style={{ textDecoration: "none", marginBottom: 5 }}
+                href="tel:08067253462"
+              >
                 <Phone>
                   <PhoneIcon /> +2348067253462
                 </Phone>

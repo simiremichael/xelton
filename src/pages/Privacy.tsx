@@ -33,8 +33,10 @@ const Title = styled.h3`
 const List = styled.li`
   font-family: Puritan;
   font-size: 20px;
-  font-style: normal;
   font-weight: 400;
+  font-style: normal;
+  list-style-type: circle;
+  list-style-position: inside;
   line-height: normal;
   letter-spacing: -0.33px;
   margin-top: 0;
@@ -98,19 +100,19 @@ function Privacy(props: PrivacyProps) {
         <TextContainer>
           <Title>1. Information We Collect</Title>
           <P>We may collect the following types of information:</P>
-          <ul style={{ margin: 0 }}>
+          <ul style={{ marginBottom: 10 }}>
             <List>
               Personal Information: Name, email address, contact details, and
               other information you voluntarily provide.
             </List>
             <List>
-              Usage Data: Information about how you interact with our software,
+              User Data: Information about how you interact with our software,
               including log files, device information, and IP addresses.
             </List>
           </ul>
           <Title>2. How We Use Your Information</Title>
           <P>We use collected information for:</P>
-          <ul style={{ margin: 0 }}>
+          <ul style={{ marginBottom: 10 }}>
             <List>Providing and maintaining our software services.</List>
             <List>Improving and customizing user experiences.</List>
             <List>Responding to your inquiries and support requests.</List>
