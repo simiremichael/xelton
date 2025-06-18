@@ -1,7 +1,6 @@
 import styled from "@emotion/styled";
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
-import whyGif from "../../assets/why-gif.gif";
 import { Fade } from "react-awesome-reveal";
 
 const StyledBox = styled(Box)`
