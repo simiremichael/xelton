@@ -266,7 +266,7 @@ function Footer() {
                 marginTop: 15,
               }}
             >
-              <Copyright>{`© Copyright ${new Date().getFullYear()} Xelton Technology (Nig.) Ltd`}</Copyright>
+              <Copyright>{`© Copyright ${new Date().getFullYear()} Xelton Technologies (Nig.) Ltd`}</Copyright>
             </InnerContainer>
           </Grid>
         </Grid>
