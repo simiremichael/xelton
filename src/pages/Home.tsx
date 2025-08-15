@@ -11,6 +11,15 @@ const StyledBox = styled(Box)`
   background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
   min-height: 100vh;
   overflow-x: hidden;
+  scroll-behavior: smooth;
+  
+  * {
+    scroll-behavior: smooth;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
 `;
 
 interface HomeProps {
