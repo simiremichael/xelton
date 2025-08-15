@@ -26,7 +26,7 @@ const ImageContainer = styled.div`
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-  
+
   @media screen and (max-width: 900px) {
     height: 350px;
     margin-bottom: 2rem;
@@ -38,7 +38,7 @@ const StyledImage = styled.img`
   height: 100%;
   object-fit: cover;
   transition: transform 0.3s ease;
-  
+
   &:hover {
     transform: scale(1.05);
   }
@@ -50,7 +50,7 @@ const ContentContainer = styled.div`
   justify-content: center;
   height: 100%;
   padding: 2rem 0;
-  
+
   @media screen and (max-width: 900px) {
     padding: 1rem 0;
   }
@@ -58,12 +58,12 @@ const ContentContainer = styled.div`
 
 const ContentText = styled.p`
   color: rgba(255, 255, 255, 0.8);
-  font-family: 'Puritan', sans-serif;
+  font-family: "Puritan", sans-serif;
   font-size: 1.1rem;
   font-weight: 400;
   line-height: 1.8;
   margin-bottom: 1.5rem;
-  
+
   @media screen and (max-width: 900px) {
     font-size: 1rem;
   }
@@ -75,7 +75,7 @@ const ValuesSection = styled.div`
   justify-content: center;
   align-items: center;
   position: relative;
-  
+
   &::before {
     content: "";
     position: absolute;
@@ -83,13 +83,21 @@ const ValuesSection = styled.div`
     left: 0;
     right: 0;
     bottom: 0;
-    background: radial-gradient(circle at 50% 50%, rgba(255, 0, 0, 0.1) 0%, transparent 70%);
+    background: radial-gradient(
+      circle at 50% 50%,
+      rgba(255, 0, 0, 0.1) 0%,
+      transparent 70%
+    );
     pointer-events: none;
   }
 `;
 
 const ValuesCard = styled.div`
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0.05) 100%
+  );
   backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 30px;
@@ -98,7 +106,7 @@ const ValuesCard = styled.div`
   text-align: center;
   position: relative;
   overflow: hidden;
-  
+
   &::before {
     content: "";
     position: absolute;
@@ -106,10 +114,14 @@ const ValuesCard = styled.div`
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba(255, 0, 0, 0.05) 0%, transparent 50%);
+    background: linear-gradient(
+      135deg,
+      rgba(255, 0, 0, 0.05) 0%,
+      transparent 50%
+    );
     pointer-events: none;
   }
-  
+
   @media screen and (max-width: 900px) {
     margin: 0 1rem;
     padding: 2rem;
@@ -118,18 +130,18 @@ const ValuesCard = styled.div`
 
 const ValuesTitle = styled.h3`
   color: #fff;
-  font-family: 'Puritan', sans-serif;
+  font-family: "Puritan", sans-serif;
   font-size: 2rem;
   font-weight: 700;
   margin: 0 0 2rem 0;
   position: relative;
   z-index: 1;
-  
+
   background: linear-gradient(135deg, #fff 0%, #ff6b6b 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  
+
   @media screen and (max-width: 600px) {
     font-size: 1.5rem;
   }
@@ -137,14 +149,14 @@ const ValuesTitle = styled.h3`
 
 const ValuesText = styled.p`
   color: rgba(255, 255, 255, 0.8);
-  font-family: 'Puritan', sans-serif;
+  font-family: "Puritan", sans-serif;
   font-size: 1.1rem;
   font-weight: 400;
   line-height: 1.7;
   margin: 0;
   position: relative;
   z-index: 1;
-  
+
   @media screen and (max-width: 600px) {
     font-size: 1rem;
   }
@@ -165,7 +177,7 @@ const MissionImageContainer = styled.div`
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  
+
   &::before {
     content: "";
     position: absolute;
@@ -173,9 +185,13 @@ const MissionImageContainer = styled.div`
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0.6) 0%, rgba(255, 0, 0, 0.3) 100%);
+    background: linear-gradient(
+      135deg,
+      rgba(0, 0, 0, 0.6) 0%,
+      rgba(255, 0, 0, 0.3) 100%
+    );
   }
-  
+
   @media screen and (max-width: 600px) {
     height: 300px;
   }
@@ -183,7 +199,7 @@ const MissionImageContainer = styled.div`
 
 const MissionTitle = styled.h2`
   color: #fff;
-  font-family: 'Puritan', sans-serif;
+  font-family: "Puritan", sans-serif;
   font-size: clamp(3rem, 8vw, 5rem);
   font-weight: 700;
   margin: 0;
@@ -198,10 +214,14 @@ const MissionContent = styled.div`
   justify-content: center;
   height: 100%;
   padding: 2rem;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.05) 0%,
+    rgba(255, 255, 255, 0.02) 100%
+  );
   border-radius: 20px;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  
+
   @media screen and (max-width: 900px) {
     margin-top: 2rem;
     padding: 1.5rem;
@@ -210,23 +230,28 @@ const MissionContent = styled.div`
 
 const MissionText = styled.p`
   color: rgba(255, 255, 255, 0.9);
-  font-family: 'Puritan', sans-serif;
+  font-family: "Puritan", sans-serif;
   font-size: 1.3rem;
   font-weight: 400;
   line-height: 1.7;
   margin: 0;
   text-align: center;
-  
+
   @media screen and (max-width: 600px) {
     font-size: 1.1rem;
   }
 `;
 
 interface AboutProps {
-  formData: any;
-  setFormData: (data: any) => void;
-  sendEmail: (data: any) => void;
-  form: any;
+  formData: { name: string; email: string; phone: string; message: string };
+  setFormData: (data: {
+    name: string;
+    email: string;
+    phone: string;
+    message: string;
+  }) => void;
+  sendEmail: () => void;
+  form: React.RefObject<HTMLFormElement>;
 }
 
 function About({ formData, setFormData, sendEmail, form }: AboutProps) {
@@ -241,7 +266,7 @@ function About({ formData, setFormData, sendEmail, form }: AboutProps) {
         form={form}
       />
       <SvgContainer text={text} />
-      
+
       <TopContainer>
         <Grid container spacing={5} alignItems="center">
           <Grid item lg={5} md={5} sm={12} xs={12}>
@@ -257,21 +282,22 @@ function About({ formData, setFormData, sendEmail, form }: AboutProps) {
                 <ContentText>
                   We are a dynamic team of skilled professionals dedicated to
                   crafting cutting-edge solutions tailored to meet your unique
-                  business needs. At Xelton Technology, we pride ourselves on our
-                  commitment to delivering high-quality software that goes beyond
-                  expectations.
+                  business needs. At Xelton Technology, we pride ourselves on
+                  our commitment to delivering high-quality software that goes
+                  beyond expectations.
                 </ContentText>
                 <ContentText>
                   Our mission is to empower businesses through transformative
-                  digital experiences. Whether you're looking for custom software
-                  development, mobile applications, or robust web solutions, we
-                  are here to turn your vision into reality.
+                  digital experiences. Whether you're looking for custom
+                  software development, mobile applications, or robust web
+                  solutions, we are here to turn your vision into reality.
                 </ContentText>
                 <ContentText>
                   What sets us apart is not just our technical prowess but our
-                  dedication to understanding your business objectives. We believe
-                  in collaborative partnerships, working closely with our clients
-                  to ensure that our solutions align seamlessly with their goals.
+                  dedication to understanding your business objectives. We
+                  believe in collaborative partnerships, working closely with
+                  our clients to ensure that our solutions align seamlessly with
+                  their goals.
                 </ContentText>
               </ContentContainer>
             </Slide>
