@@ -5,7 +5,6 @@ import Container from "@mui/material/Container";
 import img from "../../assets/bottom-img.png";
 import HighlightOffOutlinedIcon from "@mui/icons-material/HighlightOffOutlined";
 import React from "react";
-import { Slide } from "react-awesome-reveal";
 
 const StyledBox = styled(Box)`
   width: 100%;
