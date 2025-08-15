@@ -43,20 +43,32 @@ const BackgroundImage = styled.div<{ backgroundImage: string }>`
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in-out, transform 6s ease-in-out;
   opacity: 1;
+  transform: scale(1);
+  animation: scaleAnimation 6s ease-in-out infinite;
+
+  @keyframes scaleAnimation {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
 
   @media screen and (max-width: 768px) {
     background-size: cover;
     background-position: center center;
-    min-height: 100vh;
-    width: 100vw;
   }
 
   @media screen and (max-width: 480px) {
     background-attachment: scroll;
     background-size: cover;
-    background-position: center 30%;
+    background-position: center center;
   }
 
   &.fade-out {
