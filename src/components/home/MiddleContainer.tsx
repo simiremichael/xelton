@@ -5,7 +5,7 @@ import Container from "@mui/material/Container";
 import img from "../../assets/virtual-img.png";
 import HighlightOffOutlinedIcon from "@mui/icons-material/HighlightOffOutlined";
 import React from "react";
-import { Slide } from "react-awesome-reveal";
+
 
 const StyledBox = styled(Box)`
   width: 100%;
@@ -40,6 +40,18 @@ const ImageContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  animation: slideInLeft 1s ease-out;
+
+  @keyframes slideInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
 
   @media screen and (max-width: 900px) {
     height: 350px;
@@ -61,6 +73,18 @@ const ContentContainer = styled.div`
   justify-content: center;
   height: 100%;
   padding: 2rem 0;
+  animation: slideInRight 1s ease-out 0.2s both;
+
+  @keyframes slideInRight {
+    from {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
 
   @media screen and (max-width: 900px) {
     text-align: center;
@@ -294,25 +318,21 @@ function MiddleContainer({
       <StyledContainer>
         <Grid container spacing={4} alignItems="center">
           <Grid item lg={6} md={6} sm={12} xs={12}>
-            <Slide direction="left" duration={1000}>
-              <ImageContainer>
-                <GlowEffect />
-                <Image src={img} alt="Innovation" />
-              </ImageContainer>
-            </Slide>
+            <ImageContainer>
+              <GlowEffect />
+              <Image src={img} alt="Innovation" />
+            </ImageContainer>
           </Grid>
           <Grid item lg={6} md={6} sm={12} xs={12}>
-            <Slide direction="right" duration={1000} delay={200}>
-              <ContentContainer>
-                <MainText>
-                  We pride ourselves on our commitment to delivering
-                  high-quality software that goes beyond expectations. With a
-                  focus on <HighlightText>innovation</HighlightText> and{" "}
-                  <HighlightText>scalable technologies</HighlightText>.
-                </MainText>
-                <CTAButton onClick={handleOpenModal}>Connect with us</CTAButton>
-              </ContentContainer>
-            </Slide>
+            <ContentContainer>
+              <MainText>
+                We pride ourselves on our commitment to delivering high-quality
+                software that goes beyond expectations. With a focus on{" "}
+                <HighlightText>innovation</HighlightText> and{" "}
+                <HighlightText>scalable technologies</HighlightText>.
+              </MainText>
+              <CTAButton onClick={handleOpenModal}>Connect with us</CTAButton>
+            </ContentContainer>
           </Grid>
         </Grid>
       </StyledContainer>

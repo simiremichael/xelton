@@ -40,6 +40,18 @@ const ImageContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  animation: slideInLeft 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s both;
+
+  @keyframes slideInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-60px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
 
   @media screen and (max-width: 900px) {
     height: 350px;
@@ -61,6 +73,18 @@ const ContentContainer = styled.div`
   justify-content: center;
   height: 100%;
   padding: 2rem 0;
+  animation: slideInRight 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+
+  @keyframes slideInRight {
+    from {
+      opacity: 0;
+      transform: translateX(60px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
 
   @media screen and (max-width: 900px) {
     text-align: center;
@@ -302,28 +326,24 @@ function BottomContainer({
       <StyledContainer>
         <Grid container spacing={4} alignItems="center">
           <Grid item lg={6} md={6} sm={12} xs={12} order={{ xs: 2, md: 1 }}>
-            <Slide direction="right" duration={1000}>
-              <ContentContainer>
-                <MainHeading>
-                  Ready to embark on a journey of innovation?
-                </MainHeading>
-                <SubText>
-                  Contact us to discuss your project, and let's build something
-                  extraordinary together.
-                </SubText>
-                <CTAButton onClick={handleOpenModal}>
-                  Start Your Project
-                </CTAButton>
-              </ContentContainer>
-            </Slide>
+            <ContentContainer>
+              <MainHeading>
+                Ready to embark on a journey of innovation?
+              </MainHeading>
+              <SubText>
+                Contact us to discuss your project, and let's build something
+                extraordinary together.
+              </SubText>
+              <CTAButton onClick={handleOpenModal}>
+                Start Your Project
+              </CTAButton>
+            </ContentContainer>
           </Grid>
           <Grid item lg={6} md={6} sm={12} xs={12} order={{ xs: 1, md: 2 }}>
-            <Slide direction="left" duration={1000} delay={200}>
-              <ImageContainer>
-                <GlowEffect />
-                <Image src={img} alt="Ready to innovate" />
-              </ImageContainer>
-            </Slide>
+            <ImageContainer>
+              <GlowEffect />
+              <Image src={img} alt="Ready to innovate" />
+            </ImageContainer>
           </Grid>
         </Grid>
       </StyledContainer>

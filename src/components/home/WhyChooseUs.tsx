@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
-import { Fade, Slide } from "react-awesome-reveal";
+
 import whyGif from "../../assets/why-gif.gif";
 
 const StyledBox = styled(Box)`
@@ -37,6 +37,18 @@ const StyledContainer = styled(Container)`
 const SectionHeader = styled.div`
   text-align: center;
   margin-bottom: 4rem;
+  animation: fadeInUp 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
   
   @media (max-width: 600px) {
     margin-bottom: 3rem;
@@ -151,6 +163,29 @@ const TimelineContent = styled.div<{ index: number }>`
   padding: 2rem;
   max-width: 400px;
   position: relative;
+  animation: ${props => props.index % 2 === 0 ? 'slideInLeft' : 'slideInRight'} 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) ${props => props.index * 0.2}s both;
+  
+  @keyframes slideInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes slideInRight {
+    from {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
   
   ${props => props.index % 2 === 0 ? `
     margin-right: 2rem;
@@ -254,30 +289,22 @@ function WhyChooseUs() {
       }}
     >
       <StyledContainer>
-        <Fade duration={1000}>
-          <SectionHeader>
-            <Heading>Why Choose Us</Heading>
-            <SubHeading>
-              Discover what sets us apart and makes us the perfect partner for your digital transformation
-            </SubHeading>
-          </SectionHeader>
-        </Fade>
+        <SectionHeader>
+          <Heading>Why Choose Us</Heading>
+          <SubHeading>
+            Discover what sets us apart and makes us the perfect partner for your digital transformation
+          </SubHeading>
+        </SectionHeader>
         
         <TimelineContainer>
           <TimelineLine />
           {reasons.map((reason, index) => (
             <TimelineItem key={index} index={index}>
               <TimelineNumber>{index + 1}</TimelineNumber>
-              <Slide 
-                direction={index % 2 === 0 ? "left" : "right"} 
-                delay={index * 200}
-                duration={800}
-              >
-                <TimelineContent index={index}>
-                  <ContentTitle>{reason.title}</ContentTitle>
-                  <ContentDescription>{reason.description}</ContentDescription>
-                </TimelineContent>
-              </Slide>
+              <TimelineContent index={index}>
+                <ContentTitle>{reason.title}</ContentTitle>
+                <ContentDescription>{reason.description}</ContentDescription>
+              </TimelineContent>
             </TimelineItem>
           ))}
         </TimelineContainer>
