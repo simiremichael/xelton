@@ -250,7 +250,7 @@ interface AboutProps {
     phone: string;
     message: string;
   }) => void;
-  sendEmail: () => void;
+  sendEmail: (e: React.FormEvent<HTMLFormElement>) => void;
   form: React.RefObject<HTMLFormElement>;
 }
 

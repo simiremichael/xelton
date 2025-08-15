@@ -42,7 +42,7 @@ const Logo = styled.img`
 `;
 
 const LogoText = styled.h1`
-  font-family: 'Slabo 27px', serif;
+  font-family: "Slabo 27px", serif;
   font-size: 1.2rem;
   font-weight: 400;
   margin: 0;
@@ -58,7 +58,7 @@ const Navigation = styled.nav`
   display: flex;
   align-items: center;
   gap: 2rem;
-  
+
   @media screen and (max-width: 900px) {
     display: none;
   }
@@ -67,19 +67,19 @@ const Navigation = styled.nav`
 const NavItem = styled(NavLink)`
   color: rgba(255, 255, 255, 0.8);
   text-decoration: none;
-  font-family: 'Puritan', sans-serif;
+  font-family: "Puritan", sans-serif;
   font-size: 1rem;
   font-weight: 500;
   padding: 0.5rem 1rem;
   border-radius: 25px;
   transition: all 0.3s ease;
   position: relative;
-  
+
   &:hover {
     color: #fff;
     background: rgba(255, 255, 255, 0.1);
   }
-  
+
   &.active {
     color: #ff6b6b;
     background: rgba(255, 107, 107, 0.1);
@@ -91,19 +91,19 @@ const CTAButton = styled.button`
   border: none;
   border-radius: 25px;
   color: white;
-  font-family: 'Puritan', sans-serif;
+  font-family: "Puritan", sans-serif;
   font-size: 0.9rem;
   font-weight: 600;
   padding: 0.7rem 1.5rem;
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 0 4px 15px rgba(255, 0, 0, 0.2);
-  
+
   &:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(255, 0, 0, 0.3);
   }
-  
+
   @media screen and (max-width: 900px) {
     display: none;
   }
@@ -117,11 +117,11 @@ const MobileMenuButton = styled.button`
   padding: 0.5rem;
   border-radius: 8px;
   transition: all 0.3s ease;
-  
+
   &:hover {
     background: rgba(255, 255, 255, 0.1);
   }
-  
+
   @media screen and (min-width: 901px) {
     display: none;
   }
@@ -139,7 +139,7 @@ const StyledMenu = styled(Menu)`
 
 const StyledMenuItem = styled(MenuItem)`
   padding: 1rem 1.5rem;
-  
+
   &:hover {
     background: rgba(255, 255, 255, 0.1);
   }
@@ -148,10 +148,10 @@ const StyledMenuItem = styled(MenuItem)`
 const MobileNavLink = styled(NavLink)`
   color: rgba(255, 255, 255, 0.8);
   text-decoration: none;
-  font-family: 'Puritan', sans-serif;
+  font-family: "Puritan", sans-serif;
   font-size: 1rem;
   font-weight: 500;
-  
+
   &:hover {
     color: #ff6b6b;
   }
@@ -162,7 +162,7 @@ const MobileCTAButton = styled.button`
   border: none;
   border-radius: 20px;
   color: white;
-  font-family: 'Puritan', sans-serif;
+  font-family: "Puritan", sans-serif;
   font-size: 0.9rem;
   font-weight: 600;
   padding: 0.6rem 1.2rem;
@@ -171,7 +171,11 @@ const MobileCTAButton = styled.button`
 `;
 
 const ModalContainer = styled.form`
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.9) 100%);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.95) 0%,
+    rgba(255, 255, 255, 0.9) 100%
+  );
   backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 25px;
@@ -181,7 +185,7 @@ const ModalContainer = styled.form`
   width: 100%;
   max-height: 90vh;
   overflow-y: auto;
-  
+
   @media screen and (max-width: 600px) {
     padding: 1.5rem;
     margin: 1rem;
@@ -198,12 +202,12 @@ const ModalHeader = styled.div`
 
 const ModalTitle = styled.h3`
   color: #1a1a1a;
-  font-family: 'Puritan', sans-serif;
+  font-family: "Puritan", sans-serif;
   font-size: 1.5rem;
   font-weight: 700;
   margin: 0;
   line-height: 1.3;
-  
+
   @media screen and (max-width: 600px) {
     font-size: 1.2rem;
   }
@@ -217,7 +221,7 @@ const CloseButton = styled.button`
   padding: 0.5rem;
   border-radius: 50%;
   transition: all 0.3s ease;
-  
+
   &:hover {
     background: rgba(255, 0, 0, 0.1);
     color: #ff0000;
@@ -231,7 +235,7 @@ const FormGroup = styled.div`
 const Label = styled.label`
   display: block;
   color: #333;
-  font-family: 'Puritan', sans-serif;
+  font-family: "Puritan", sans-serif;
   font-size: 0.9rem;
   font-weight: 600;
   margin-bottom: 0.5rem;
@@ -239,20 +243,20 @@ const Label = styled.label`
 
 const StyledTextField = styled(TextField)`
   width: 100%;
-  
+
   & .MuiOutlinedInput-root {
     background: rgba(255, 255, 255, 0.8);
     border-radius: 12px;
-    
+
     &:hover fieldset {
       border-color: #ff6b6b;
     }
-    
+
     &.Mui-focused fieldset {
       border-color: #ff0000;
     }
   }
-  
+
   & .MuiInputLabel-root {
     &.Mui-focused {
       color: #ff0000;
@@ -266,13 +270,13 @@ const SubmitButton = styled.button`
   border: none;
   border-radius: 12px;
   color: white;
-  font-family: 'Puritan', sans-serif;
+  font-family: "Puritan", sans-serif;
   font-size: 1.1rem;
   font-weight: 700;
   padding: 1rem;
   cursor: pointer;
   transition: all 0.3s ease;
-  
+
   &:hover {
     transform: translateY(-2px);
     box-shadow: 0 10px 20px rgba(255, 0, 0, 0.3);
@@ -297,66 +301,70 @@ interface HomeProps {
     phone: string;
     message: string;
   }) => void;
-  sendEmail: () => void;
+  sendEmail: (e: React.FormEvent<HTMLFormElement>) => void;
   form: string | React.RefObject<HTMLFormElement>;
 }
 
 function HomeNavBar({ formData, setFormData, sendEmail, form }: HomeProps) {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const [openModal, setOpenModal] = React.useState(false);
-  
+
   const open = Boolean(anchorEl);
-  
+
   const handleMenuClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     setAnchorEl(event.currentTarget);
   };
-  
+
   const handleMenuClose = () => {
     setAnchorEl(null);
   };
-  
+
   const handleModalOpen = () => {
     setOpenModal(true);
     setAnchorEl(null);
   };
-  
+
   const handleModalClose = () => setOpenModal(false);
 
   return (
     <StyledBox>
       <StyledContainer>
         <LogoSection>
-          <NavLink to="/" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center' }}>
+          <NavLink
+            to="/"
+            style={{
+              textDecoration: "none",
+              display: "flex",
+              alignItems: "center",
+            }}
+          >
             <Logo src={logo} alt="Xelton Technologies" />
             <LogoText>Xelton Technologies</LogoText>
           </NavLink>
         </LogoSection>
-        
+
         <Navigation>
           <NavItem to="/about">About</NavItem>
           <NavItem to="/contact">Contact</NavItem>
           <CTAButton onClick={handleModalOpen}>Hire Us</CTAButton>
         </Navigation>
-        
-        <MobileMenuButton
-          onClick={handleMenuClick}
-          aria-label="Open menu"
-        >
+
+        <MobileMenuButton onClick={handleMenuClick} aria-label="Open menu">
           <MenuOutlinedIcon />
         </MobileMenuButton>
       </StyledContainer>
-      
+
       <StyledMenu
         anchorEl={anchorEl}
         open={open}
         onClose={handleMenuClose}
         anchorOrigin={{
-          vertical: 'bottom',
-          horizontal: 'right',
+          vertical: "bottom",
+          horizontal: "right",
         }}
         transformOrigin={{
-          vertical: 'top',
-          horizontal: 'right',
+          vertical: "top",
+          horizontal: "right",
         }}
       >
         <StyledMenuItem onClick={handleMenuClose}>
@@ -369,26 +377,20 @@ function HomeNavBar({ formData, setFormData, sendEmail, form }: HomeProps) {
           <MobileCTAButton>Hire Us</MobileCTAButton>
         </StyledMenuItem>
       </StyledMenu>
-      
+
       <Modal
         open={openModal}
         onClose={handleModalClose}
         aria-labelledby="hire-us-modal"
       >
-        <ModalContainer
-          style={modalStyle}
-          ref={form}
-          onSubmit={sendEmail}
-        >
+        <ModalContainer style={modalStyle} ref={form} onSubmit={sendEmail}>
           <ModalHeader>
-            <ModalTitle>
-              Let's work together on your next project
-            </ModalTitle>
+            <ModalTitle>Let's work together on your next project</ModalTitle>
             <CloseButton onClick={handleModalClose}>
               <HighlightOffOutlinedIcon />
             </CloseButton>
           </ModalHeader>
-          
+
           <FormGroup>
             <Label>Full Name</Label>
             <StyledTextField
@@ -402,7 +404,7 @@ function HomeNavBar({ formData, setFormData, sendEmail, form }: HomeProps) {
               }
             />
           </FormGroup>
-          
+
           <FormGroup>
             <Label>Email</Label>
             <StyledTextField
@@ -417,7 +419,7 @@ function HomeNavBar({ formData, setFormData, sendEmail, form }: HomeProps) {
               }
             />
           </FormGroup>
-          
+
           <FormGroup>
             <Label>Phone</Label>
             <StyledTextField
@@ -432,7 +434,7 @@ function HomeNavBar({ formData, setFormData, sendEmail, form }: HomeProps) {
               }
             />
           </FormGroup>
-          
+
           <FormGroup>
             <Label>Message</Label>
             <StyledTextField
@@ -446,10 +448,8 @@ function HomeNavBar({ formData, setFormData, sendEmail, form }: HomeProps) {
               }
             />
           </FormGroup>
-          
-          <SubmitButton type="submit">
-            Send Message
-          </SubmitButton>
+
+          <SubmitButton type="submit">Send Message</SubmitButton>
         </ModalContainer>
       </Modal>
     </StyledBox>

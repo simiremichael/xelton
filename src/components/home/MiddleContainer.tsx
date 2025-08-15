@@ -275,7 +275,7 @@ interface HomeProps {
     phone: string;
     message: string;
   }) => void;
-  sendEmail: (data: React.FormEvent<HTMLFormElement>) => void;
+  sendEmail: (e: React.FormEvent<HTMLFormElement>) => void;
   form: React.RefObject<HTMLFormElement>;
 }
 

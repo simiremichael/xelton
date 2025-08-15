@@ -39,7 +39,7 @@ const BackgroundImage = styled.div<{ backgroundImage: string }>`
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: url(${props => props.backgroundImage});
+  background-image: url(${(props) => props.backgroundImage});
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -173,7 +173,7 @@ interface HomeProps {
     phone: string;
     message: string;
   }) => void;
-  sendEmail: () => void;
+  sendEmail: (e: React.FormEvent<HTMLFormElement>) => void;
   form: React.RefObject<HTMLFormElement>;
 }
 
@@ -240,9 +240,9 @@ function TopContainer({ formData, setFormData, sendEmail, form }: HomeProps) {
 
   return (
     <StyledBox>
-      <BackgroundImage 
+      <BackgroundImage
         backgroundImage={currentSlide.image}
-        className={isTransitioning ? 'fade-out' : ''}
+        className={isTransitioning ? "fade-out" : ""}
       />
       <HomeNavBar
         sendEmail={sendEmail}
