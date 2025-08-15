@@ -46,6 +46,19 @@ const BackgroundImage = styled.div<{ backgroundImage: string }>`
   transition: opacity 1s ease-in-out;
   opacity: 1;
 
+  @media screen and (max-width: 768px) {
+    background-size: cover;
+    background-position: center center;
+    min-height: 100vh;
+    width: 100vw;
+  }
+
+  @media screen and (max-width: 480px) {
+    background-attachment: scroll;
+    background-size: cover;
+    background-position: center 30%;
+  }
+
   &.fade-out {
     opacity: 0;
   }
