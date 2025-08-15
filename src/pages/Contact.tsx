@@ -7,162 +7,247 @@ import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import CallIcon from "@mui/icons-material/Call";
 import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
 import HomeNavBar from "../components/navbar/HomeNavBar";
+import { Fade, Slide } from "react-awesome-reveal";
 
 const StyledBox = styled(Box)`
   width: 100%;
-  height: 100%;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
 `;
+
 const StyledContainer = styled(Container)`
-  margin: 20px 0;
+  padding: 4rem 0;
+  position: relative;
+  z-index: 1;
 `;
-const Title = styled.h2`
-  font-family: Puritan;
-  font-size: 28px;
-  font-style: normal;
+
+const SectionTitle = styled.h2`
+  color: #fff;
+  font-family: "Puritan", sans-serif;
+  font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 700;
-  margin-bottom: 10px;
-  line-height: normal;
-  letter-spacing: -0.462px;
-  @media screen and (max-width: 600px) {
-    font-family: Puritan;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    letter-spacing: -0.297px;
-  }
+  margin-bottom: 3rem;
+  text-align: center;
+
+  background: linear-gradient(135deg, #fff 0%, #ff6b6b 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 `;
-const LeftContainer = styled.div`
+
+const ContactInfoSection = styled.div`
   display: flex;
-  padding: 0px 10px;
   flex-direction: column;
-  align-items: flex-start;
-  @media screen and (min-width: 900px) {
-    margin-top: 20%;
-  }
-  gap: 10px;
+  gap: 2rem;
+  padding: 2rem 0;
 `;
-const LeftText = styled.p`
-  font-family: Puritan;
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  letter-spacing: -0.33px;
-  display: flex;
-  align-items: center;
-  @media screen and (max-width: 600px) {
-    font-size: 16px;
-  }
-`;
-const RightContainer = styled.form`
-  height: auto;
-  padding: 10px;
-  border-radius: 20px;
-  background: #fff;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25),
-    0px 2.3px 2px 0px rgba(0, 0, 0, 0.18);
-`;
-const BtnContainer = styled.div`
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
-const SubmitBtn = styled.button`
-  display: flex;
-  width: 212px;
-  height: 56px;
-  padding: 10px;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  cursor: pointer;
-  flex-shrink: 0;
-  border-radius: 10px;
-  border: 0.71px solid rgba(255, 0, 0, 1);
-  background: rgba(255, 0, 0, 0.12);
-  color: #f00;
-  font-family: Puritan;
-  font-size: 20px;
-  font-style: normal;
+
+const InfoTitle = styled.h3`
+  color: #fff;
+  font-family: "Puritan", sans-serif;
+  font-size: 1.5rem;
   font-weight: 700;
-  line-height: normal;
-  letter-spacing: -0.1px;
-  margin-top: 8px;
-  @media screen and (max-width: 600px) {
-    width: 159px;
-    height: 38px;
-    padding: 10px;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    letter-spacing: -0.08px;
+  margin: 0 0 1.5rem 0;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background: linear-gradient(90deg, #ff0000 0%, #ff6b6b 100%);
+    border-radius: 2px;
+  }
+
+  @media screen and (max-width: 900px) {
+    text-align: center;
+    &::after {
+      left: 50%;
+      transform: translateX(-50%);
+    }
   }
 `;
-const TextFields = styled(TextField)`
-  background: rgba(217, 217, 217, 0.4);
-  margin: 5px 0 12px 0;
-`;
-const Label = styled.label`
-  color: #000;
-  font-family: Puritan;
-  font-size: 20px;
-  font-style: normal;
+
+const ContactItem = styled.a`
+  display: flex;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.8);
+  font-family: "Puritan", sans-serif;
+  font-size: 1.1rem;
   font-weight: 400;
-  line-height: normal;
-  letter-spacing: -0.33px;
-  text-align: start;
+  text-decoration: none;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  border-radius: 15px;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+
+  &:hover {
+    color: #ff6b6b;
+    background: rgba(255, 107, 107, 0.1);
+    border-color: rgba(255, 107, 107, 0.3);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(255, 0, 0, 0.2);
+  }
+
+  &:hover div {
+    background: linear-gradient(
+      135deg,
+      rgba(255, 0, 0, 0.4) 0%,
+      rgba(255, 0, 0, 0.3) 100%
+    );
+    transform: scale(1.1);
+  }
+
+  @media screen and (max-width: 900px) {
+    justify-content: center;
+  }
+
   @media screen and (max-width: 600px) {
-    color: #000;
-    font-family: Puritan;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    letter-spacing: -0.231px;
+    font-size: 1rem;
   }
 `;
-const EmailIcon = styled(MailOutlineIcon)`
-  font-size: 28px;
-  margin-right: 10px;
+
+const ContactIcon = styled.div`
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 0, 0, 0.2) 0%,
+    rgba(255, 0, 0, 0.1) 100%
+  );
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1rem;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  svg {
+    font-size: 1.5rem;
+    color: #ff6b6b;
+  }
+
   @media screen and (max-width: 600px) {
-    font-size: 18px;
+    width: 45px;
+    height: 45px;
+
+    svg {
+      font-size: 1.3rem;
+    }
   }
 `;
-const PhoneIcon = styled(CallIcon)`
-  font-size: 28px;
-  margin-right: 10px;
+
+const FormContainer = styled.form`
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.95) 0%,
+    rgba(255, 255, 255, 0.9) 100%
+  );
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 25px;
+  padding: 2.5rem;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+
   @media screen and (max-width: 600px) {
-    font-size: 18px;
+    padding: 2rem;
   }
 `;
-const AddressIcon = styled(LocationOnOutlinedIcon)`
-  font-size: 28px;
-  margin-right: 10px;
+
+const FormTitle = styled.h3`
+  color: #333;
+  font-family: "Puritan", sans-serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin: 0 0 2rem 0;
+  text-align: center;
+
   @media screen and (max-width: 600px) {
-    font-size: 18px;
+    font-size: 1.5rem;
   }
 `;
+
+const FormGroup = styled.div`
+  margin-bottom: 1.5rem;
+`;
+
+const Label = styled.label`
+  display: block;
+  color: #333;
+  font-family: "Puritan", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+`;
+
+const StyledTextField = styled(TextField)`
+  width: 100%;
+
+  & .MuiOutlinedInput-root {
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 12px;
+
+    &:hover fieldset {
+      border-color: #ff6b6b;
+    }
+
+    &.Mui-focused fieldset {
+      border-color: #ff0000;
+    }
+  }
+
+  & .MuiInputLabel-root {
+    &.Mui-focused {
+      color: #ff0000;
+    }
+  }
+`;
+
+const SubmitButton = styled.button`
+  width: 100%;
+  background: linear-gradient(135deg, #ff0000 0%, #ff6b6b 100%);
+  border: none;
+  border-radius: 12px;
+  color: white;
+  font-family: "Puritan", sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  padding: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(255, 0, 0, 0.3);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+`;
+
 interface ContactProps {
-  formData: any;
-  setFormData: (data: any) => void;
-  sendEmail: (data: any) => void;
-  form: any;
+  formData: { name: string; email: string; phone: string; message: string };
+  setFormData: (data: {
+    name: string;
+    email: string;
+    phone: string;
+    message: string;
+  }) => void;
+  sendEmail: () => void;
+  form: React.RefObject<HTMLFormElement>;
 }
 
-function Contact(props: ContactProps) {
-  const formData = props.formData;
-  const setFormData = props.setFormData;
-  const sendEmail = props.sendEmail;
-  const form = props.form;
-  // const nameRef = props.nameRef
-  // const messageRef = props.messageRef
-  // const emailRef = props.emailRef
-  // const numberRef = props.numberRef
-
+function Contact({ formData, setFormData, sendEmail, form }: ContactProps) {
   const text = "Contact";
+
   return (
     <StyledBox>
       <HomeNavBar
@@ -171,111 +256,113 @@ function Contact(props: ContactProps) {
         setFormData={setFormData}
         form={form}
       />
-      {/* <NavBar
-        sendEmail={sendEmail}
-        formData={formData}
-        setFormData={setFormData}
-        form={form}
-      /> */}
       <SvgContainer text={text} />
+
       <StyledContainer>
-        <Grid container spacing={2}>
+        <Fade duration={1000}>
+          <SectionTitle>Get In Touch With Us</SectionTitle>
+        </Fade>
+
+        <Grid container spacing={5} alignItems="stretch">
           <Grid item lg={6} md={6} sm={12} xs={12}>
-            <LeftContainer>
-              <Title>General Inquiries</Title>
-              <a
-                style={{ textDecoration: "none" }}
-                href="mailto:sales@xeltontechnologies.com.ng"
-              >
-                <LeftText>
-                  <EmailIcon /> sales@xeltontechnologies.com.ng
-                </LeftText>
-              </a>
-              {/* <h3>Tel:</h3> */}
-              <a style={{ textDecoration: "none" }} href="tel:08067253462">
-                <LeftText>
-                  <PhoneIcon /> +2348067253462
-                </LeftText>
-              </a>
-              <LeftText>
-                <AddressIcon /> 52 Agungi Ajiran Road, Lekki Lagos, Nigeria
-              </LeftText>
-            </LeftContainer>
+            <Slide direction="left" duration={1000}>
+              <ContactInfoSection>
+                <InfoTitle>Let's Start a Conversation</InfoTitle>
+
+                <ContactItem href="mailto:sales@xeltontechnologies.com.ng">
+                  <ContactIcon>
+                    <MailOutlineIcon />
+                  </ContactIcon>
+                  sales@xeltontechnologies.com.ng
+                </ContactItem>
+
+                <ContactItem href="tel:+2348067253462">
+                  <ContactIcon>
+                    <CallIcon />
+                  </ContactIcon>
+                  +234 806 725 3462
+                </ContactItem>
+
+                <ContactItem as="div">
+                  <ContactIcon>
+                    <LocationOnOutlinedIcon />
+                  </ContactIcon>
+                  52 Agungi Ajiran Road, Lekki, Lagos, Nigeria
+                </ContactItem>
+              </ContactInfoSection>
+            </Slide>
           </Grid>
+
           <Grid item lg={6} md={6} sm={12} xs={12}>
-            <RightContainer ref={form} onSubmit={sendEmail}>
-              <Title style={{ textAlign: "center", marginTop: 0 }}>
-                Contact Us
-              </Title>
-              <Label id="name">Full Name</Label>
-              <TextFields
-                required
-                id="name"
-                type="text"
-                name="name"
-                autoComplete="off"
-                label="Full Name"
-                value={formData.name}
-                fullWidth
-                size="small"
-                onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-                  setFormData({ ...formData, name: e.target.value })
-                }
-              />
-              <Label id="email">Email</Label>
-              <TextFields
-                required
-                id="email"
-                label="Email"
-                name="user_email"
-                autoComplete="off"
-                type="email"
-                value={formData.email}
-                fullWidth
-                size="small"
-                onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-                  setFormData({ ...formData, email: e.target.value })
-                }
-              />
-              <Label id="phone">Phone</Label>
-              <TextFields
-                required
-                id="phone"
-                label="Phone"
-                autoComplete="off"
-                type="number"
-                name="phone"
-                value={formData.phone}
-                fullWidth
-                size="small"
-                onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-                  setFormData({ ...formData, phone: e.target.value })
-                }
-              />
-              <Label id="message">Message</Label>
-              <TextFields
-                id="message"
-                type="text"
-                autoComplete="off"
-                label="Message"
-                name="message"
-                multiline
-                fullWidth
-                rows={4}
-                value={formData.message}
-                onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-                  setFormData({ ...formData, message: e.target.value })
-                }
-              />
-              <BtnContainer>
-                <SubmitBtn value="send" type="submit">
-                  Submit
-                </SubmitBtn>
-              </BtnContainer>
-            </RightContainer>
+            <Slide direction="right" duration={1000} delay={200}>
+              <FormContainer ref={form} onSubmit={sendEmail}>
+                <FormTitle>Send Us a Message</FormTitle>
+
+                <FormGroup>
+                  <Label>Full Name</Label>
+                  <StyledTextField
+                    required
+                    name="name"
+                    label="Enter your full name"
+                    value={formData.name}
+                    size="small"
+                    onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                      setFormData({ ...formData, name: e.target.value })
+                    }
+                  />
+                </FormGroup>
+
+                <FormGroup>
+                  <Label>Email</Label>
+                  <StyledTextField
+                    required
+                    name="user_email"
+                    type="email"
+                    label="Enter your email address"
+                    value={formData.email}
+                    size="small"
+                    onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                      setFormData({ ...formData, email: e.target.value })
+                    }
+                  />
+                </FormGroup>
+
+                <FormGroup>
+                  <Label>Phone</Label>
+                  <StyledTextField
+                    required
+                    name="phone"
+                    type="tel"
+                    label="Enter your phone number"
+                    value={formData.phone}
+                    size="small"
+                    onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                      setFormData({ ...formData, phone: e.target.value })
+                    }
+                  />
+                </FormGroup>
+
+                <FormGroup>
+                  <Label>Message</Label>
+                  <StyledTextField
+                    name="message"
+                    label="Tell us about your project"
+                    multiline
+                    rows={4}
+                    value={formData.message}
+                    onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                      setFormData({ ...formData, message: e.target.value })
+                    }
+                  />
+                </FormGroup>
+
+                <SubmitButton type="submit">Send Message</SubmitButton>
+              </FormContainer>
+            </Slide>
           </Grid>
         </Grid>
       </StyledContainer>
+
       <Footer />
     </StyledBox>
   );

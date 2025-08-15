@@ -8,201 +8,275 @@ import image3 from "../../assets/mobile.jpeg";
 import image4 from "../../assets/uiux.jpg";
 import ellipse from "../../assets/Ellipse1.svg";
 import HomeNavBar from "../navbar/HomeNavBar";
-import { Zoom } from "react-awesome-reveal";
+import { Zoom, Fade } from "react-awesome-reveal";
 
 const StyledBox = styled(Box)`
+  position: relative;
   width: 100%;
-  background-position: center;
-  background-repeat: repeat;
-  background-size: 100% 100%;
-  margin: 0;
-  padding: 0;
+  min-height: 100vh;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      135deg,
+      rgba(0, 0, 0, 0.7) 0%,
+      rgba(255, 0, 0, 0.1) 50%,
+      rgba(0, 0, 0, 0.8) 100%
+    );
+    z-index: 1;
+  }
+`;
+
+const BackgroundImage = styled.div<{ backgroundImage: string }>`
+  position: absolute;
   top: 0;
-  @media screen and (max-width: 900px) {
-    background-size: 100% 100%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url(${props => props.backgroundImage});
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: opacity 1s ease-in-out;
+  opacity: 1;
+
+  &.fade-out {
+    opacity: 0;
   }
 `;
+
 const StyledContainer = styled(Container)`
-  height: 460px;
-  @media screen and (max-width: 600px) {
-    height: 373px;
-    flex-shrink: 0;
-  }
-`;
-const WebDevContainer = styled.div`
-  display: inline-flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 44px;
-  margin-top: 15%;
-  justify-content: center;
-  @media screen and (max-width: 600px) {
-    margin-top: 30%;
-  }
-`;
-const ERPContainer = styled.div`
-  display: inline-flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 44px;
-  margin-top: 15%;
-  @media screen and (max-width: 600px) {
-    margin-top: 30%;
-  }
-`;
-const MobileContainer = styled.div`
-  display: inline-flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 44px;
-  margin-top: 15%;
-  @media screen and (max-width: 600px) {
-    margin-top: 30%;
-  }
-`;
-const UIUXContainer = styled.div`
-  display: inline-flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 44px;
-  margin-top: 15%;
-  @media screen and (max-width: 600px) {
-    margin-top: 30%;
-  }
-`;
-const Content = styled.h1`
+  position: relative;
+  z-index: 2;
+  height: 100vh;
   display: flex;
   align-items: center;
-  font-family: Puritan;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  letter-spacing: -0.264px;
+  padding-top: 80px;
+
   @media screen and (max-width: 600px) {
-    font-family: Puritan;
-    font-size: 10px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    letter-spacing: -0.165px;
+    height: 90vh;
+    padding-top: 60px;
   }
 `;
+
+const ContentContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2rem;
+  max-width: 600px;
+
+  @media screen and (max-width: 600px) {
+    gap: 1.5rem;
+    max-width: 100%;
+  }
+`;
+
+const Badge = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  font-family: "Puritan", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+
+  @media screen and (max-width: 600px) {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.8rem;
+  }
+`;
+
 const ContentIcon = styled.img`
+  width: 16px;
+  height: 16px;
+
+  @media screen and (max-width: 600px) {
+    width: 12px;
+    height: 12px;
+  }
+`;
+
+const MainHeading = styled.h1`
+  color: #fff;
+  font-family: "Puritan", sans-serif;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0;
+
+  background: linear-gradient(135deg, #fff 0%, #ff6b6b 50%, #fff 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  @media screen and (max-width: 600px) {
+    font-size: clamp(1.8rem, 8vw, 2.5rem);
+  }
+`;
+
+const SubHeading = styled.p`
+  color: rgba(255, 255, 255, 0.8);
+  font-family: "Puritan", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 1.6;
+  margin: 0;
+  max-width: 500px;
+
+  @media screen and (max-width: 600px) {
+    font-size: 1rem;
+  }
+`;
+
+const ProgressBar = styled.div`
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.5rem;
+  z-index: 3;
+`;
+
+const ProgressDot = styled.div<{ active: boolean }>`
   width: 12px;
   height: 12px;
-  fill: #f00;
-  stroke-width: 1.4px;
-  stroke: #000;
-  margin-right: 5px;
-  @media screen and (max-width: 600px) {
-    width: 6px;
-    height: 6px;
-  }
-`;
-const ContentHeader = styled.div`
-  color: #fff;
-  font-family: Puritan;
-  font-size: 38px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-  letter-spacing: -0.627px;
-  @media screen and (max-width: 600px) {
-    color: #fff;
-    font-family: Puritan;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    letter-spacing: -0.297px;
+  border-radius: 50%;
+  background: ${(props) =>
+    props.active ? "#ff0000" : "rgba(255, 255, 255, 0.3)"};
+  transition: all 0.3s ease;
+  cursor: pointer;
+
+  &:hover {
+    background: ${(props) =>
+      props.active ? "#ff0000" : "rgba(255, 255, 255, 0.6)"};
   }
 `;
 
 interface HomeProps {
-  formData: any;
-  setFormData: (data: any) => void;
-  sendEmail: (data: any) => void;
-  form: any;
+  formData: { name: string; email: string; phone: string; message: string };
+  setFormData: (data: {
+    name: string;
+    email: string;
+    phone: string;
+    message: string;
+  }) => void;
+  sendEmail: () => void;
+  form: React.RefObject<HTMLFormElement>;
 }
 
-function TopContainer(props: HomeProps) {
-  const formData = props.formData;
-  const setFormData = props.setFormData;
-  const sendEmail = props.sendEmail;
-  const form = props.form;
+const slides = [
+  {
+    image: image1,
+    badge: "Software Engineering",
+    title: "Web Development",
+    subtitle:
+      "Robust and scalable web solutions crafted to enhance your online presence and drive business growth.",
+  },
+  {
+    image: image2,
+    badge: "Software Development",
+    title: "ERP Software",
+    subtitle:
+      "Comprehensive enterprise solutions designed to streamline your business operations and boost efficiency.",
+  },
+  {
+    image: image3,
+    badge: "Mobile Application",
+    title: "Mobile App Development",
+    subtitle:
+      "Innovative mobile applications for iOS and Android platforms with seamless user experience.",
+  },
+  {
+    image: image4,
+    badge: "Design",
+    title: "UI/UX Design",
+    subtitle:
+      "Intuitive and visually appealing interfaces that deliver exceptional user experiences.",
+  },
+];
 
+function TopContainer({ formData, setFormData, sendEmail, form }: HomeProps) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const images = [image1, image2, image3, image4];
+  const [isTransitioning, setIsTransitioning] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentImageIndex((prevIndex) =>
-        prevIndex === images.length - 1 ? 0 : prevIndex + 1
-      );
-    }, 5000); // Change image every 5 seconds (3000 milliseconds)
+      setIsTransitioning(true);
+      setTimeout(() => {
+        setCurrentImageIndex((prevIndex) =>
+          prevIndex === slides.length - 1 ? 0 : prevIndex + 1
+        );
+        setIsTransitioning(false);
+      }, 500);
+    }, 6000);
 
-    return () => clearInterval(interval); // Clear interval on component unmount
-  }, [images.length]);
+    return () => clearInterval(interval);
+  }, []);
+
+  const handleDotClick = (index: number) => {
+    if (index !== currentImageIndex) {
+      setIsTransitioning(true);
+      setTimeout(() => {
+        setCurrentImageIndex(index);
+        setIsTransitioning(false);
+      }, 500);
+    }
+  };
+
+  const currentSlide = slides[currentImageIndex];
 
   return (
-    <StyledBox
-      style={{
-        backgroundImage: `url(${images[currentImageIndex]})`,
-      }}
-    >
+    <StyledBox>
+      <BackgroundImage 
+        backgroundImage={currentSlide.image}
+        className={isTransitioning ? 'fade-out' : ''}
+      />
       <HomeNavBar
         sendEmail={sendEmail}
         formData={formData}
         setFormData={setFormData}
         form={form}
       />
-      <StyledContainer className="content-slider">
-        {currentImageIndex === 0 && (
-          <Zoom duration={2000}>
-            <WebDevContainer>
-              <Content>
+      <StyledContainer>
+        <Fade key={currentImageIndex} duration={1000}>
+          <ContentContainer>
+            <Zoom duration={800} delay={200}>
+              <Badge>
                 <ContentIcon src={ellipse} />
-                Software Engineering
-              </Content>
-              <ContentHeader>Web Development</ContentHeader>
-            </WebDevContainer>
-          </Zoom>
-        )}
-        {currentImageIndex === 1 && (
-          <Zoom duration={2000}>
-            <ERPContainer>
-              <Content>
-                <ContentIcon src={ellipse} />
-                Software Development
-              </Content>
-              <ContentHeader>ERP Software</ContentHeader>
-            </ERPContainer>
-          </Zoom>
-        )}
-        {currentImageIndex === 2 && (
-          <Zoom duration={2000}>
-            <MobileContainer>
-              <Content>
-                <ContentIcon src={ellipse} />
-                Mobile Application
-              </Content>
-              <ContentHeader>Mobile App Development</ContentHeader>
-            </MobileContainer>
-          </Zoom>
-        )}
-        {currentImageIndex === 3 && (
-          <Zoom duration={2000}>
-            <UIUXContainer>
-              <Content>
-                <ContentIcon src={ellipse} />
-                Design
-              </Content>
-              <ContentHeader>User Experience (UI/UX) Design</ContentHeader>
-            </UIUXContainer>
-          </Zoom>
-        )}
+                {currentSlide.badge}
+              </Badge>
+            </Zoom>
+            <Zoom duration={1000} delay={400}>
+              <MainHeading>{currentSlide.title}</MainHeading>
+            </Zoom>
+            <Fade duration={1200} delay={600}>
+              <SubHeading>{currentSlide.subtitle}</SubHeading>
+            </Fade>
+          </ContentContainer>
+        </Fade>
       </StyledContainer>
+      <ProgressBar>
+        {slides.map((_, index) => (
+          <ProgressDot
+            key={index}
+            active={index === currentImageIndex}
+            onClick={() => handleDotClick(index)}
+          />
+        ))}
+      </ProgressBar>
     </StyledBox>
   );
 }

@@ -11,412 +11,446 @@ import { Modal, TextField } from "@mui/material";
 import HighlightOffOutlinedIcon from "@mui/icons-material/HighlightOffOutlined";
 
 const StyledBox = styled(Box)`
-  background: rgba(255, 255, 255, 0.1);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.9);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
 `;
+
 const StyledContainer = styled(Container)`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 1rem 0;
 `;
-const LogoContainer = styled.div`
+
+const LogoSection = styled.div`
   display: flex;
-  height: 46px;
-  padding: 5.345px 0px 5.345px 5.012px;
-  justify-content: flex-end;
   align-items: center;
 `;
+
 const Logo = styled.img`
-  width: 47.76px;
-  height: 35.311px;
+  width: 40px;
+  height: 30px;
+  margin-right: 0.5rem;
   flex-shrink: 0;
-  margin-right: -12px;
 `;
-const LogoContent = styled.p`
-  font-family: Slabo 27px;
-  font-size: 18px;
-  font-style: normal;
+
+const LogoText = styled.h1`
+  font-family: 'Slabo 27px', serif;
+  font-size: 1.2rem;
   font-weight: 400;
-  line-height: normal;
-  letter-spacing: -0.297px;
-  background: linear-gradient(
-    83deg,
-    #fff 55.33%,
-    #d39563 133.93%,
-    #2ac3d1 147.35%,
-    #253138 147.35%
-  );
+  margin: 0;
+  background: linear-gradient(135deg, #fff 0%, #ff6b6b 50%, #fff 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  margin-left: -10px;
-`;
-const MenuContainer = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  @media screen and (min-width: 901px) {
-    gap: 203px;
-  }
-`;
-const MenuItems = styled.p`
-  font-family: Puritan;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  letter-spacing: -0.08px;
-  cursor: pointer;
-  @media screen and (max-width: 900px) {
-    display: none;
-  }
-`;
-const HireUsBtn = styled.button`
-  display: flex;
-  padding: 10px;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  color: #f00;
-  cursor: pointer;
-  border-radius: 10px;
-  background: #fff;
-  @media screen and (max-width: 900px) {
-    display: none;
-  }
-`;
-const MobileHireUsBtn = styled.button`
-  display: flex;
-  padding: 10px;
-  justify-content: center;
-  align-items: center;
-  color: #f00;
-  cursor: pointer;
-  border-radius: 10px;
-  background: #fff;
-  outline: none;
-  border: none;
-`;
-const StyledLink = styled(NavLink)`
-  text-decoration: none;
-  color: #fff;
-  :active {
-    font-weight: bold;
-  }
-`;
-const StyledLinks = styled(NavLink)`
-  text-decoration: none;
-  font-family: Puritan;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  letter-spacing: -0.264px;
-  :active {
-    font-weight: bold;
-  }
-`;
-const BuggerMenuContainer = styled.div`
-  @media screen and (min-width: 901px) {
-    display: none;
-  }
-`;
-const StyledButton = styled.button`
-  border: none;
-  outlined: none;
-  @media screen and (min-width: 901px) {
-    display: none;
-  }
-`;
-const ModalContainer = styled.form`
-  height: auto;
-  padding: 10px;
-  border-radius: 20px;
-  margin: 20px 0;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25),
-    0px 2.3px 2px 0px rgba(0, 0, 0, 0.18);
-`;
-const BtnContainer = styled.div`
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
-const SubmitBtn = styled.button`
-  display: flex;
-  width: 212px;
-  height: 56px;
-  padding: 10px;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  cursor: pointer;
-  flex-shrink: 0;
-  border-radius: 10px;
-  border: 0.71px solid rgba(255, 0, 0, 1);
-  background: rgba(255, 0, 0, 0.12);
-  color: #f00;
-  font-family: Puritan;
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-  letter-spacing: -0.1px;
-  margin-top: 8px;
-  @media screen and (max-width: 600px) {
-    width: 159px;
-    height: 38px;
-    padding: 10px;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    letter-spacing: -0.08px;
-  }
-`;
-const TextFields = styled(TextField)`
-  background: rgba(217, 217, 217, 1);
-  margin: 5px 0 12px 0;
-`;
-const Label = styled.label`
-  font-family: Puritan;
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  letter-spacing: -0.33px;
-  text-align: start;
-  @media screen and (max-width: 600px) {
-    font-family: Puritan;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    letter-spacing: -0.231px;
-  }
-`;
-const Title = styled.h3`
-  font-family: Puritan;
-  font-size: 26px;
-  margin: 0 0 10px 0;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-  letter-spacing: -0.462px;
-  @media screen and (max-width: 600px) {
-    font-family: Puritan;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    letter-spacing: -0.297px;
-  }
-`;
-const CloseIconContainer = styled.div`
-  display: flex;
-  justify-content: flex-end;
+  white-space: nowrap;
+  line-height: 1;
 `;
 
-const style: React.CSSProperties = {
-  position: "absolute",
-  top: "46%",
+const Navigation = styled.nav`
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  
+  @media screen and (max-width: 900px) {
+    display: none;
+  }
+`;
+
+const NavItem = styled(NavLink)`
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  font-family: 'Puritan', sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  position: relative;
+  
+  &:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.1);
+  }
+  
+  &.active {
+    color: #ff6b6b;
+    background: rgba(255, 107, 107, 0.1);
+  }
+`;
+
+const CTAButton = styled.button`
+  background: linear-gradient(135deg, #ff0000 0%, #ff6b6b 100%);
+  border: none;
+  border-radius: 25px;
+  color: white;
+  font-family: 'Puritan', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 0.7rem 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 0, 0, 0.2);
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 0, 0, 0.3);
+  }
+  
+  @media screen and (max-width: 900px) {
+    display: none;
+  }
+`;
+
+const MobileMenuButton = styled.button`
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+  
+  @media screen and (min-width: 901px) {
+    display: none;
+  }
+`;
+
+const StyledMenu = styled(Menu)`
+  & .MuiPaper-root {
+    background: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    margin-top: 0.5rem;
+  }
+`;
+
+const StyledMenuItem = styled(MenuItem)`
+  padding: 1rem 1.5rem;
+  
+  &:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+`;
+
+const MobileNavLink = styled(NavLink)`
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  font-family: 'Puritan', sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  
+  &:hover {
+    color: #ff6b6b;
+  }
+`;
+
+const MobileCTAButton = styled.button`
+  background: linear-gradient(135deg, #ff0000 0%, #ff6b6b 100%);
+  border: none;
+  border-radius: 20px;
+  color: white;
+  font-family: 'Puritan', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 0.6rem 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+`;
+
+const ModalContainer = styled.form`
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.9) 100%);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 25px;
+  padding: 2rem;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+  max-width: 500px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  
+  @media screen and (max-width: 600px) {
+    padding: 1.5rem;
+    margin: 1rem;
+    max-height: 85vh;
+  }
+`;
+
+const ModalHeader = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+`;
+
+const ModalTitle = styled.h3`
+  color: #1a1a1a;
+  font-family: 'Puritan', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.3;
+  
+  @media screen and (max-width: 600px) {
+    font-size: 1.2rem;
+  }
+`;
+
+const CloseButton = styled.button`
+  background: none;
+  border: none;
+  color: #666;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    background: rgba(255, 0, 0, 0.1);
+    color: #ff0000;
+  }
+`;
+
+const FormGroup = styled.div`
+  margin-bottom: 1.5rem;
+`;
+
+const Label = styled.label`
+  display: block;
+  color: #333;
+  font-family: 'Puritan', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+`;
+
+const StyledTextField = styled(TextField)`
+  width: 100%;
+  
+  & .MuiOutlinedInput-root {
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 12px;
+    
+    &:hover fieldset {
+      border-color: #ff6b6b;
+    }
+    
+    &.Mui-focused fieldset {
+      border-color: #ff0000;
+    }
+  }
+  
+  & .MuiInputLabel-root {
+    &.Mui-focused {
+      color: #ff0000;
+    }
+  }
+`;
+
+const SubmitButton = styled.button`
+  width: 100%;
+  background: linear-gradient(135deg, #ff0000 0%, #ff6b6b 100%);
+  border: none;
+  border-radius: 12px;
+  color: white;
+  font-family: 'Puritan', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  padding: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(255, 0, 0, 0.3);
+  }
+`;
+
+const modalStyle = {
+  position: "absolute" as const,
+  top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
-  minWidth: 340,
-  padding: 32, // 4 * 8px (MUI spacing unit)
+  outline: "none",
+  maxHeight: "90vh",
+  overflowY: "auto" as const,
 };
 
 interface HomeProps {
-  formData: any;
-  setFormData: (data: any) => void;
-  sendEmail: (data: any) => void;
-  form: any;
+  formData: { name: string; email: string; phone: string; message: string };
+  setFormData: (data: {
+    name: string;
+    email: string;
+    phone: string;
+    message: string;
+  }) => void;
+  sendEmail: () => void;
+  form: string | React.RefObject<HTMLFormElement>;
 }
 
-function HomeNavBar(props: HomeProps) {
-  const formData = props.formData;
-  const setFormData = props.setFormData;
-  const sendEmail = props.sendEmail;
-  const form = props.form;
-
+function HomeNavBar({ formData, setFormData, sendEmail, form }: HomeProps) {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+  const [openModal, setOpenModal] = React.useState(false);
+  
   const open = Boolean(anchorEl);
-  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+  
+  const handleMenuClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     setAnchorEl(event.currentTarget);
   };
-  const handleClose = () => {
+  
+  const handleMenuClose = () => {
     setAnchorEl(null);
   };
-
-  const [openModal, setOpenModal] = React.useState(false);
-  const handleOpenModal = () => setOpenModal(true);
-  const handleCloseModal = () => setOpenModal(false);
-  const handleHire = () => {
+  
+  const handleModalOpen = () => {
     setOpenModal(true);
     setAnchorEl(null);
   };
+  
+  const handleModalClose = () => setOpenModal(false);
 
   return (
     <StyledBox>
       <StyledContainer>
-        <LogoContainer>
-          <StyledLink id="navbar" to="/">
-            <LogoContent>
-              <Logo src={logo} alt="logo" />
-              elton Technologies
-            </LogoContent>
-          </StyledLink>
-        </LogoContainer>
-        <MenuContainer>
-          <MenuItems>
-            <StyledLink id="navbar" to="/about">
-              About
-            </StyledLink>
-          </MenuItems>
-          <MenuItems>
-            <StyledLink id="navbar" to="/contact">
-              Contact
-            </StyledLink>
-          </MenuItems>
-          <HireUsBtn onClick={handleOpenModal}>Hire Us</HireUsBtn>
-          <BuggerMenuContainer>
-            <StyledButton
-              id="basic-button"
-              aria-controls={open ? "basic-menu" : undefined}
-              aria-haspopup="true"
-              aria-expanded={open ? "true" : undefined}
-              onClick={handleClick}
-            >
-              <MenuOutlinedIcon />
-            </StyledButton>
-          </BuggerMenuContainer>
-        </MenuContainer>
+        <LogoSection>
+          <NavLink to="/" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center' }}>
+            <Logo src={logo} alt="Xelton Technologies" />
+            <LogoText>Xelton Technologies</LogoText>
+          </NavLink>
+        </LogoSection>
+        
+        <Navigation>
+          <NavItem to="/about">About</NavItem>
+          <NavItem to="/contact">Contact</NavItem>
+          <CTAButton onClick={handleModalOpen}>Hire Us</CTAButton>
+        </Navigation>
+        
+        <MobileMenuButton
+          onClick={handleMenuClick}
+          aria-label="Open menu"
+        >
+          <MenuOutlinedIcon />
+        </MobileMenuButton>
       </StyledContainer>
-      <Menu
-        id="basic-menu"
-        title="menu"
+      
+      <StyledMenu
         anchorEl={anchorEl}
         open={open}
-        onClose={handleClose}
-        MenuListProps={{
-          "aria-labelledby": "basic-button",
+        onClose={handleMenuClose}
+        anchorOrigin={{
+          vertical: 'bottom',
+          horizontal: 'right',
+        }}
+        transformOrigin={{
+          vertical: 'top',
+          horizontal: 'right',
         }}
       >
-        <MenuItem onClick={handleClose}>
-          {" "}
-          <StyledLinks id="navbar" to="/about">
-            About
-          </StyledLinks>
-        </MenuItem>
-        <MenuItem onClick={handleClose}>
-          {" "}
-          <StyledLinks id="navbar" to="/contact">
-            Contact
-          </StyledLinks>
-        </MenuItem>
-        <MenuItem onClick={handleHire}>
-          {" "}
-          <MobileHireUsBtn>Hire Us</MobileHireUsBtn>
-        </MenuItem>
-      </Menu>
+        <StyledMenuItem onClick={handleMenuClose}>
+          <MobileNavLink to="/about">About</MobileNavLink>
+        </StyledMenuItem>
+        <StyledMenuItem onClick={handleMenuClose}>
+          <MobileNavLink to="/contact">Contact</MobileNavLink>
+        </StyledMenuItem>
+        <StyledMenuItem onClick={handleModalOpen}>
+          <MobileCTAButton>Hire Us</MobileCTAButton>
+        </StyledMenuItem>
+      </StyledMenu>
+      
       <Modal
         open={openModal}
-        onClose={handleCloseModal}
-        aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description"
+        onClose={handleModalClose}
+        aria-labelledby="hire-us-modal"
       >
-        {/* <Grid container spacing={2}>
-            <Grid item lg={2.5} md={2.5} sm={2} xs={0}></Grid>
-            <Grid item lg={7} md={7} sm={8} xs={12}> */}
         <ModalContainer
-          className="bg-black"
-          style={style}
+          style={modalStyle}
           ref={form}
           onSubmit={sendEmail}
         >
-          <CloseIconContainer>
-            <HighlightOffOutlinedIcon
-              onClick={handleCloseModal}
-              style={{
-                fontSize: 24,
-                cursor: "pointer",
-                color: "#000",
-                marginTop: 15,
-                marginRight: 15,
-              }}
+          <ModalHeader>
+            <ModalTitle>
+              Let's work together on your next project
+            </ModalTitle>
+            <CloseButton onClick={handleModalClose}>
+              <HighlightOffOutlinedIcon />
+            </CloseButton>
+          </ModalHeader>
+          
+          <FormGroup>
+            <Label>Full Name</Label>
+            <StyledTextField
+              required
+              name="name"
+              label="Enter your full name"
+              value={formData.name}
+              size="small"
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                setFormData({ ...formData, name: e.target.value })
+              }
             />
-          </CloseIconContainer>
-          <Title>
-            Share your ideas with us, and we will get in touch quickly.
-          </Title>
-          <Label>Full Name</Label>
-          <TextFields
-            required
-            name="name"
-            id="name"
-            label="Full Name"
-            value={formData.name}
-            fullWidth
-            size="small"
-            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-              setFormData({ ...formData, name: e.target.value })
-            }
-          />
-          <Label>Email</Label>
-          <TextFields
-            required
-            name="email"
-            id="email"
-            label="Email"
-            value={formData.email}
-            fullWidth
-            size="small"
-            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-              setFormData({ ...formData, email: e.target.value })
-            }
-          />
-          <Label>Phone</Label>
-          <TextFields
-            required
-            name="phone"
-            id="phone"
-            type="number"
-            label="Phone"
-            value={formData.phone}
-            fullWidth
-            size="small"
-            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-              setFormData({ ...formData, phone: e.target.value })
-            }
-          />
-          <Label>Message</Label>
-          <TextFields
-            id="message"
-            name="message"
-            label="Message"
-            multiline
-            fullWidth
-            rows={4}
-            value={formData.message}
-            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-              setFormData({ ...formData, message: e.target.value })
-            }
-          />
-          <BtnContainer>
-            <SubmitBtn value="send" type="submit">
-              Submit
-            </SubmitBtn>
-          </BtnContainer>
+          </FormGroup>
+          
+          <FormGroup>
+            <Label>Email</Label>
+            <StyledTextField
+              required
+              name="email"
+              type="email"
+              label="Enter your email address"
+              value={formData.email}
+              size="small"
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                setFormData({ ...formData, email: e.target.value })
+              }
+            />
+          </FormGroup>
+          
+          <FormGroup>
+            <Label>Phone</Label>
+            <StyledTextField
+              required
+              name="phone"
+              type="tel"
+              label="Enter your phone number"
+              value={formData.phone}
+              size="small"
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                setFormData({ ...formData, phone: e.target.value })
+              }
+            />
+          </FormGroup>
+          
+          <FormGroup>
+            <Label>Message</Label>
+            <StyledTextField
+              name="message"
+              label="Tell us about your project"
+              multiline
+              rows={4}
+              value={formData.message}
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                setFormData({ ...formData, message: e.target.value })
+              }
+            />
+          </FormGroup>
+          
+          <SubmitButton type="submit">
+            Send Message
+          </SubmitButton>
         </ModalContainer>
-        {/* </Grid>
-            <Grid item lg={2.5} md={2.5} sm={2} xs={0}></Grid>
-          </Grid> */}
       </Modal>
     </StyledBox>
   );

@@ -6,23 +6,26 @@ import WhyChooseUs from "../components/home/WhyChooseUs";
 import MiddleContainer from "../components/home/MiddleContainer";
 import BottomContainer from "../components/home/BottomContainer";
 import Footer from "../components/footer/Footer";
-// import Container from '@mui/material/Container';
 
-const StyledBox = styled(Box)``;
+const StyledBox = styled(Box)`
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+  min-height: 100vh;
+  overflow-x: hidden;
+`;
 
 interface HomeProps {
-  formData: any;
-  setFormData: (data: any) => void;
-  sendEmail: (data: any) => void;
-  form: any;
+  formData: { name: string; email: string; phone: string; message: string };
+  setFormData: (data: {
+    name: string;
+    email: string;
+    phone: string;
+    message: string;
+  }) => void;
+  sendEmail: () => void;
+  form: React.RefObject<HTMLFormElement>;
 }
 
-function Home(props: HomeProps) {
-  const formData = props.formData;
-  const setFormData = props.setFormData;
-  const sendEmail = props.sendEmail;
-  const form = props.form;
-
+function Home({ formData, setFormData, sendEmail, form }: HomeProps) {
   return (
     <StyledBox>
       <TopContainer
