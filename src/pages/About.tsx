@@ -6,7 +6,7 @@ import image from "../assets/about-img.png";
 import bottomImg from "../assets/about-bottom-img.png";
 import Footer from "../components/footer/Footer";
 import HomeNavBar from "../components/navbar/HomeNavBar";
-import { Fade, Slide } from "react-awesome-reveal";
+
 
 const StyledBox = styled(Box)`
   width: 100%;
@@ -26,6 +26,18 @@ const ImageContainer = styled.div`
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  animation: slideInLeft 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  
+  @keyframes slideInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
 
   @media screen and (max-width: 900px) {
     height: 350px;
@@ -50,6 +62,18 @@ const ContentContainer = styled.div`
   justify-content: center;
   height: 100%;
   padding: 2rem 0;
+  animation: slideInRight 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s both;
+  
+  @keyframes slideInRight {
+    from {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
 
   @media screen and (max-width: 900px) {
     padding: 1rem 0;
@@ -106,6 +130,18 @@ const ValuesCard = styled.div`
   text-align: center;
   position: relative;
   overflow: hidden;
+  animation: fadeInUp 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 
   &::before {
     content: "";
@@ -177,6 +213,18 @@ const MissionImageContainer = styled.div`
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  animation: slideInLeft 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  
+  @keyframes slideInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
 
   &::before {
     content: "";
@@ -221,6 +269,18 @@ const MissionContent = styled.div`
   );
   border-radius: 20px;
   border: 1px solid rgba(255, 255, 255, 0.1);
+  animation: slideInRight 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s both;
+  
+  @keyframes slideInRight {
+    from {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
 
   @media screen and (max-width: 900px) {
     margin-top: 2rem;
@@ -270,78 +330,68 @@ function About({ formData, setFormData, sendEmail, form }: AboutProps) {
       <TopContainer>
         <Grid container spacing={5} alignItems="center">
           <Grid item lg={5} md={5} sm={12} xs={12}>
-            <Slide direction="left" duration={1000}>
-              <ImageContainer>
-                <StyledImage src={image} alt="About Xelton Technologies" />
-              </ImageContainer>
-            </Slide>
+            <ImageContainer>
+              <StyledImage src={image} alt="About Xelton Technologies" />
+            </ImageContainer>
           </Grid>
           <Grid item lg={7} md={7} sm={12} xs={12}>
-            <Slide direction="right" duration={1000} delay={200}>
-              <ContentContainer>
-                <ContentText>
-                  We are a dynamic team of skilled professionals dedicated to
-                  crafting cutting-edge solutions tailored to meet your unique
-                  business needs. At Xelton Technology, we pride ourselves on
-                  our commitment to delivering high-quality software that goes
-                  beyond expectations.
-                </ContentText>
-                <ContentText>
-                  Our mission is to empower businesses through transformative
-                  digital experiences. Whether you're looking for custom
-                  software development, mobile applications, or robust web
-                  solutions, we are here to turn your vision into reality.
-                </ContentText>
-                <ContentText>
-                  What sets us apart is not just our technical prowess but our
-                  dedication to understanding your business objectives. We
-                  believe in collaborative partnerships, working closely with
-                  our clients to ensure that our solutions align seamlessly with
-                  their goals.
-                </ContentText>
-              </ContentContainer>
-            </Slide>
+            <ContentContainer>
+              <ContentText>
+                We are a dynamic team of skilled professionals dedicated to
+                crafting cutting-edge solutions tailored to meet your unique
+                business needs. At Xelton Technology, we pride ourselves on
+                our commitment to delivering high-quality software that goes
+                beyond expectations.
+              </ContentText>
+              <ContentText>
+                Our mission is to empower businesses through transformative
+                digital experiences. Whether you're looking for custom
+                software development, mobile applications, or robust web
+                solutions, we are here to turn your vision into reality.
+              </ContentText>
+              <ContentText>
+                What sets us apart is not just our technical prowess but our
+                dedication to understanding your business objectives. We
+                believe in collaborative partnerships, working closely with
+                our clients to ensure that our solutions align seamlessly with
+                their goals.
+              </ContentText>
+            </ContentContainer>
           </Grid>
         </Grid>
       </TopContainer>
 
       <ValuesSection>
-        <Fade duration={1000}>
-          <ValuesCard>
-            <ValuesTitle>Our Values</ValuesTitle>
-            <ValuesText>
-              With the aptitude for creating new and innovative applications and
-              an ability for renovating existing ones, Xelton has pioneered
-              itself in Web Solutions, Custom Application Development, Mobile
-              Applications, Search Engine Optimization, ERP Software and other
-              comprehensive IT Services that drive business success.
-            </ValuesText>
-          </ValuesCard>
-        </Fade>
+        <ValuesCard>
+          <ValuesTitle>Our Values</ValuesTitle>
+          <ValuesText>
+            With the aptitude for creating new and innovative applications and
+            an ability for renovating existing ones, Xelton has pioneered
+            itself in Web Solutions, Custom Application Development, Mobile
+            Applications, Search Engine Optimization, ERP Software and other
+            comprehensive IT Services that drive business success.
+          </ValuesText>
+        </ValuesCard>
       </ValuesSection>
 
       <MissionSection>
         <Grid container spacing={4} alignItems="stretch">
           <Grid item lg={6} md={6} sm={12} xs={12}>
-            <Slide direction="left" duration={1000}>
-              <MissionImageContainer
-                style={{ backgroundImage: `url(${bottomImg})` }}
-              >
-                <MissionTitle>MISSION</MissionTitle>
-              </MissionImageContainer>
-            </Slide>
+            <MissionImageContainer
+              style={{ backgroundImage: `url(${bottomImg})` }}
+            >
+              <MissionTitle>MISSION</MissionTitle>
+            </MissionImageContainer>
           </Grid>
           <Grid item lg={6} md={6} sm={12} xs={12}>
-            <Slide direction="right" duration={1000} delay={200}>
-              <MissionContent>
-                <MissionText>
-                  Our mission is to create transformative digital solutions that
-                  enable businesses to succeed in a rapidly changing
-                  technological landscape. We deliver innovative software
-                  experiences customized to exceed our clients' unique needs.
-                </MissionText>
-              </MissionContent>
-            </Slide>
+            <MissionContent>
+              <MissionText>
+                Our mission is to create transformative digital solutions that
+                enable businesses to succeed in a rapidly changing
+                technological landscape. We deliver innovative software
+                experiences customized to exceed our clients' unique needs.
+              </MissionText>
+            </MissionContent>
           </Grid>
         </Grid>
       </MissionSection>

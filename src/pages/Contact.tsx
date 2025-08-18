@@ -7,7 +7,6 @@ import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import CallIcon from "@mui/icons-material/Call";
 import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
 import HomeNavBar from "../components/navbar/HomeNavBar";
-import { Fade, Slide } from "react-awesome-reveal";
 
 const StyledBox = styled(Box)`
   width: 100%;
@@ -28,11 +27,23 @@ const SectionTitle = styled.h2`
   font-weight: 700;
   margin-bottom: 3rem;
   text-align: center;
+  animation: fadeInUp 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 
   background: linear-gradient(135deg, #fff 0%, #ff6b6b 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 `;
 
 const ContactInfoSection = styled.div`
@@ -40,6 +51,18 @@ const ContactInfoSection = styled.div`
   flex-direction: column;
   gap: 2rem;
   padding: 2rem 0;
+  animation: slideInLeft 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+
+  @keyframes slideInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
 `;
 
 const InfoTitle = styled.h3`
@@ -154,6 +177,18 @@ const FormContainer = styled.form`
   border-radius: 25px;
   padding: 2.5rem;
   box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+  animation: slideInRight 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s both;
+
+  @keyframes slideInRight {
+    from {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
 
   @media screen and (max-width: 600px) {
     padding: 2rem;
@@ -259,106 +294,100 @@ function Contact({ formData, setFormData, sendEmail, form }: ContactProps) {
       <SvgContainer text={text} />
 
       <StyledContainer>
-        <Fade duration={1000}>
-          <SectionTitle>Get In Touch With Us</SectionTitle>
-        </Fade>
+        <SectionTitle>Get In Touch With Us</SectionTitle>
 
         <Grid container spacing={5} alignItems="stretch">
           <Grid item lg={6} md={6} sm={12} xs={12}>
-            <Slide direction="left" duration={1000}>
-              <ContactInfoSection>
-                <InfoTitle>Let's Start a Conversation</InfoTitle>
+            <ContactInfoSection>
+              <InfoTitle>Let's Start a Conversation</InfoTitle>
 
-                <ContactItem href="mailto:sales@xeltontechnologies.com.ng">
-                  <ContactIcon>
-                    <MailOutlineIcon />
-                  </ContactIcon>
-                  sales@xeltontechnologies.com.ng
-                </ContactItem>
+              <ContactItem href="mailto:sales@xeltontechnologies.com.ng">
+                <ContactIcon>
+                  <MailOutlineIcon />
+                </ContactIcon>
+                sales@xeltontechnologies.com.ng
+              </ContactItem>
 
-                <ContactItem href="tel:+2348067253462">
-                  <ContactIcon>
-                    <CallIcon />
-                  </ContactIcon>
-                  +234 806 725 3462
-                </ContactItem>
+              <ContactItem href="tel:+2348067253462">
+                <ContactIcon>
+                  <CallIcon />
+                </ContactIcon>
+                +234 806 725 3462
+              </ContactItem>
 
-                <ContactItem as="div">
-                  <ContactIcon>
-                    <LocationOnOutlinedIcon />
-                  </ContactIcon>
-                  52 Agungi Ajiran Road, Lekki, Lagos, Nigeria
-                </ContactItem>
-              </ContactInfoSection>
-            </Slide>
+              <ContactItem as="div">
+                <ContactIcon>
+                  <LocationOnOutlinedIcon />
+                </ContactIcon>
+                52 Agungi Ajiran Road, Lekki, Lagos, Nigeria
+              </ContactItem>
+            </ContactInfoSection>
           </Grid>
 
           <Grid item lg={6} md={6} sm={12} xs={12}>
-            <Slide direction="right" duration={1000} delay={200}>
-              <FormContainer ref={form} onSubmit={sendEmail}>
-                <FormTitle>Send Us a Message</FormTitle>
+            <FormContainer ref={form} onSubmit={sendEmail}>
+              <FormTitle>Send Us a Message</FormTitle>
 
-                <FormGroup>
-                  <Label>Full Name</Label>
-                  <StyledTextField
-                    required
-                    name="name"
-                    label="Enter your full name"
-                    value={formData.name}
-                    size="small"
-                    onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-                      setFormData({ ...formData, name: e.target.value })
-                    }
-                  />
-                </FormGroup>
+              <FormGroup>
+                <Label>Full Name</Label>
+                <StyledTextField
+                  required
+                  name="name"
+                  label="Enter your full name"
+                  value={formData.name}
+                  size="small"
+                  onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                    setFormData({ ...formData, name: e.target.value })
+                  }
+                />
+              </FormGroup>
 
-                <FormGroup>
-                  <Label>Email</Label>
-                  <StyledTextField
-                    required
-                    name="user_email"
-                    type="email"
-                    label="Enter your email address"
-                    value={formData.email}
-                    size="small"
-                    onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-                      setFormData({ ...formData, email: e.target.value })
-                    }
-                  />
-                </FormGroup>
+              <FormGroup>
+                <Label>Email</Label>
+                <StyledTextField
+                  required
+                  name="user_email"
+                  type="email"
+                  label="Enter your email address"
+                  value={formData.email}
+                  size="small"
+                  onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                    setFormData({ ...formData, email: e.target.value })
+                  }
+                />
+              </FormGroup>
 
-                <FormGroup>
-                  <Label>Phone</Label>
-                  <StyledTextField
-                    required
-                    name="phone"
-                    type="tel"
-                    label="Enter your phone number"
-                    value={formData.phone}
-                    size="small"
-                    onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-                      setFormData({ ...formData, phone: e.target.value })
-                    }
-                  />
-                </FormGroup>
+              <FormGroup>
+                <Label>Phone</Label>
+                <StyledTextField
+                  required
+                  name="phone"
+                  type="tel"
+                  label="Enter your phone number"
+                  value={formData.phone}
+                  size="small"
+                  onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                    setFormData({ ...formData, phone: e.target.value })
+                  }
+                />
+              </FormGroup>
 
-                <FormGroup>
-                  <Label>Message</Label>
-                  <StyledTextField
-                    name="message"
-                    label="Tell us about your project"
-                    multiline
-                    rows={4}
-                    value={formData.message}
-                    onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-                      setFormData({ ...formData, message: e.target.value })
-                    }
-                  />
-                </FormGroup>
+              <FormGroup>
+                <Label>Message</Label>
+                <StyledTextField
+                  name="message"
+                  label="Tell us about your project"
+                  multiline
+                  rows={4}
+                  value={formData.message}
+                  onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                    setFormData({ ...formData, message: e.target.value })
+                  }
+                />
+              </FormGroup>
 
-                <SubmitButton type="submit">Send Message</SubmitButton>
-              </FormContainer>
-            </Slide>
+              <SubmitButton type="submit">Send Message</SubmitButton>
+            </FormContainer>
           </Grid>
         </Grid>
       </StyledContainer>

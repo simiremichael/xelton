@@ -4,7 +4,6 @@ import Footer from "../components/footer/Footer";
 import { Container } from "@mui/material";
 import SvgContainer from "../components/SvgContainer";
 import HomeNavBar from "../components/navbar/HomeNavBar";
-import { Fade, Slide } from "react-awesome-reveal";
 
 const StyledBox = styled(Box)`
   width: 100%;
@@ -32,6 +31,18 @@ const ContentCard = styled.div`
   margin: 0 auto;
   position: relative;
   overflow: hidden;
+  animation: fadeInUp 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 
   &::before {
     content: "";
@@ -54,10 +65,22 @@ const ContentCard = styled.div`
   }
 `;
 
-const Section = styled.div`
+const Section = styled.div<{ index?: number }>`
   margin-bottom: 2.5rem;
   position: relative;
   z-index: 1;
+  animation: slideInUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) ${props => (props.index || 0) * 0.1 + 0.2}s both;
+  
+  @keyframes slideInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 
   &:last-child {
     margin-bottom: 0;
@@ -208,146 +231,126 @@ function Privacy({ formData, setFormData, sendEmail, form }: PrivacyProps) {
       <SvgContainer text={text} />
 
       <StyledContainer>
-        <Fade duration={1000}>
-          <ContentCard>
-            <Slide direction="up" duration={800} delay={200}>
-              <Section>
-                <SectionTitle>1. Information We Collect</SectionTitle>
-                <ContentText>
-                  We may collect the following types of information:
-                </ContentText>
-                <StyledList>
-                  <ListItem>
-                    Personal Information: Name, email address, contact details,
-                    and other information you voluntarily provide.
-                  </ListItem>
-                  <ListItem>
-                    User Data: Information about how you interact with our
-                    software, including log files, device information, and IP
-                    addresses.
-                  </ListItem>
-                </StyledList>
-              </Section>
-            </Slide>
+        <ContentCard>
+          <Section index={0}>
+            <SectionTitle>1. Information We Collect</SectionTitle>
+            <ContentText>
+              We may collect the following types of information:
+            </ContentText>
+            <StyledList>
+              <ListItem>
+                Personal Information: Name, email address, contact details,
+                and other information you voluntarily provide.
+              </ListItem>
+              <ListItem>
+                User Data: Information about how you interact with our
+                software, including log files, device information, and IP
+                addresses.
+              </ListItem>
+            </StyledList>
+          </Section>
 
-            <Slide direction="up" duration={800} delay={300}>
-              <Section>
-                <SectionTitle>2. How We Use Your Information</SectionTitle>
-                <ContentText>We use collected information for:</ContentText>
-                <StyledList>
-                  <ListItem>
-                    Providing and maintaining our software services.
-                  </ListItem>
-                  <ListItem>
-                    Improving and customizing user experiences.
-                  </ListItem>
-                  <ListItem>
-                    Responding to your inquiries and support requests.
-                  </ListItem>
-                  <ListItem>Sending important notices and updates.</ListItem>
-                </StyledList>
-              </Section>
-            </Slide>
+          <Section index={1}>
+            <SectionTitle>2. How We Use Your Information</SectionTitle>
+            <ContentText>We use collected information for:</ContentText>
+            <StyledList>
+              <ListItem>
+                Providing and maintaining our software services.
+              </ListItem>
+              <ListItem>
+                Improving and customizing user experiences.
+              </ListItem>
+              <ListItem>
+                Responding to your inquiries and support requests.
+              </ListItem>
+              <ListItem>Sending important notices and updates.</ListItem>
+            </StyledList>
+          </Section>
 
-            <Slide direction="up" duration={800} delay={400}>
-              <Section>
-                <SectionTitle>3. Information Sharing</SectionTitle>
-                <ContentText>
-                  We do not sell, trade, or otherwise transfer your personally
-                  identifiable information to third parties. However, we may
-                  share information with trusted third parties who assist us in
-                  operating our website, conducting our business, or servicing
-                  you.
-                </ContentText>
-              </Section>
-            </Slide>
+          <Section index={2}>
+            <SectionTitle>3. Information Sharing</SectionTitle>
+            <ContentText>
+              We do not sell, trade, or otherwise transfer your personally
+              identifiable information to third parties. However, we may
+              share information with trusted third parties who assist us in
+              operating our website, conducting our business, or servicing
+              you.
+            </ContentText>
+          </Section>
 
-            <Slide direction="up" duration={800} delay={500}>
-              <Section>
-                <SectionTitle>4. Data Security</SectionTitle>
-                <ContentText>
-                  We implement security measures to protect your personal
-                  information. However, no method of transmission over the
-                  internet or electronic storage is completely secure. We cannot
-                  guarantee absolute security.
-                </ContentText>
-              </Section>
-            </Slide>
+          <Section index={3}>
+            <SectionTitle>4. Data Security</SectionTitle>
+            <ContentText>
+              We implement security measures to protect your personal
+              information. However, no method of transmission over the
+              internet or electronic storage is completely secure. We cannot
+              guarantee absolute security.
+            </ContentText>
+          </Section>
 
-            <Slide direction="up" duration={800} delay={600}>
-              <Section>
-                <SectionTitle>
-                  5. Cookies and Tracking Technologies
-                </SectionTitle>
-                <ContentText>
-                  Our software may use cookies and similar tracking technologies
-                  to enhance user experience. You can adjust your browser
-                  settings to refuse cookies, but this may limit certain
-                  features.
-                </ContentText>
-              </Section>
-            </Slide>
+          <Section index={4}>
+            <SectionTitle>
+              5. Cookies and Tracking Technologies
+            </SectionTitle>
+            <ContentText>
+              Our software may use cookies and similar tracking technologies
+              to enhance user experience. You can adjust your browser
+              settings to refuse cookies, but this may limit certain
+              features.
+            </ContentText>
+          </Section>
 
-            <Slide direction="up" duration={800} delay={700}>
-              <Section>
-                <SectionTitle>6. Your Choices</SectionTitle>
-                <ContentText>
-                  You can choose not to provide certain information, but this
-                  may affect your ability to use specific features of our
-                  software. You may opt out of receiving promotional emails.
-                </ContentText>
-              </Section>
-            </Slide>
+          <Section index={5}>
+            <SectionTitle>6. Your Choices</SectionTitle>
+            <ContentText>
+              You can choose not to provide certain information, but this
+              may affect your ability to use specific features of our
+              software. You may opt out of receiving promotional emails.
+            </ContentText>
+          </Section>
 
-            <Slide direction="up" duration={800} delay={800}>
-              <Section>
-                <SectionTitle>7. Children's Privacy</SectionTitle>
-                <ContentText>
-                  Our services are not directed at individuals under the age of
-                  13. We do not knowingly collect personal information from
-                  children. If you believe we have unintentionally collected
-                  such information, please contact us.
-                </ContentText>
-              </Section>
-            </Slide>
+          <Section index={6}>
+            <SectionTitle>7. Children's Privacy</SectionTitle>
+            <ContentText>
+              Our services are not directed at individuals under the age of
+              13. We do not knowingly collect personal information from
+              children. If you believe we have unintentionally collected
+              such information, please contact us.
+            </ContentText>
+          </Section>
 
-            <Slide direction="up" duration={800} delay={900}>
-              <Section>
-                <SectionTitle>8. Changes to This Privacy Policy</SectionTitle>
-                <ContentText>
-                  We may update this Privacy Policy periodically. Check the
-                  "Last Updated" date to be aware of any changes. Your continued
-                  use of our services after changes indicates your acceptance.
-                </ContentText>
-              </Section>
-            </Slide>
+          <Section index={7}>
+            <SectionTitle>8. Changes to This Privacy Policy</SectionTitle>
+            <ContentText>
+              We may update this Privacy Policy periodically. Check the
+              "Last Updated" date to be aware of any changes. Your continued
+              use of our services after changes indicates your acceptance.
+            </ContentText>
+          </Section>
 
-            <Slide direction="up" duration={800} delay={1000}>
-              <Section>
-                <SectionTitle>9. Contact Us</SectionTitle>
-                <ContentText>
-                  If you have questions or concerns about our Privacy Policy,
-                  please contact us. By using our software, you agree to this
-                  Privacy Policy.
-                </ContentText>
-                <ContactInfo>
-                  <ContactText>
-                    Email us at{" "}
-                    <a href="mailto:info@xeltontechnologies.com.ng">
-                      info@xeltontechnologies.com.ng
-                    </a>
-                  </ContactText>
-                </ContactInfo>
-              </Section>
-            </Slide>
+          <Section index={8}>
+            <SectionTitle>9. Contact Us</SectionTitle>
+            <ContentText>
+              If you have questions or concerns about our Privacy Policy,
+              please contact us. By using our software, you agree to this
+              Privacy Policy.
+            </ContentText>
+            <ContactInfo>
+              <ContactText>
+                Email us at{" "}
+                <a href="mailto:info@xeltontechnologies.com.ng">
+                  info@xeltontechnologies.com.ng
+                </a>
+              </ContactText>
+            </ContactInfo>
+          </Section>
 
-            <LastUpdated>
-              <UpdateText>
-                Last Updated: {new Date().toLocaleDateString()}
-              </UpdateText>
-            </LastUpdated>
-          </ContentCard>
-        </Fade>
+          <LastUpdated>
+            <UpdateText>
+              Last Updated: {new Date().toLocaleDateString()}
+            </UpdateText>
+          </LastUpdated>
+        </ContentCard>
       </StyledContainer>
 
       <Footer />

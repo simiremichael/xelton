@@ -8,7 +8,6 @@ import image3 from "../../assets/mobile.jpeg";
 import image4 from "../../assets/uiux.jpg";
 import ellipse from "../../assets/Ellipse1.svg";
 import HomeNavBar from "../navbar/HomeNavBar";
-import { Zoom, Fade } from "react-awesome-reveal";
 
 const StyledBox = styled(Box)`
   position: relative;
@@ -90,12 +89,22 @@ const StyledContainer = styled(Container)`
   }
 `;
 
-const ContentContainer = styled.div`
+const ContentContainer = styled.div<{ key?: number }>`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 2rem;
   max-width: 600px;
+  animation: fadeIn 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
 
   @media screen and (max-width: 600px) {
     gap: 1.5rem;
@@ -116,6 +125,18 @@ const Badge = styled.div`
   font-family: "Puritan", sans-serif;
   font-size: 0.9rem;
   font-weight: 500;
+  animation: zoomIn 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s both;
+  
+  @keyframes zoomIn {
+    from {
+      opacity: 0;
+      transform: scale(0.8);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
 
   @media screen and (max-width: 600px) {
     font-size: 0.8rem;
@@ -140,11 +161,23 @@ const MainHeading = styled.h1`
   font-weight: 700;
   line-height: 1.2;
   margin: 0;
+  animation: zoomIn 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.4s both;
 
   background: linear-gradient(135deg, #fff 0%, #ff6b6b 50%, #fff 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  
+  @keyframes zoomIn {
+    from {
+      opacity: 0;
+      transform: scale(0.8);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
 
   @media screen and (max-width: 600px) {
     font-size: clamp(1.8rem, 8vw, 2.5rem);
@@ -159,6 +192,16 @@ const SubHeading = styled.p`
   line-height: 1.6;
   margin: 0;
   max-width: 500px;
+  animation: fadeIn 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.6s both;
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
 
   @media screen and (max-width: 600px) {
     font-size: 1rem;
@@ -276,22 +319,14 @@ function TopContainer({ formData, setFormData, sendEmail, form }: HomeProps) {
         form={form}
       />
       <StyledContainer>
-        <Fade key={currentImageIndex} duration={1000}>
-          <ContentContainer>
-            <Zoom duration={800} delay={200}>
-              <Badge>
-                <ContentIcon src={ellipse} />
-                {currentSlide.badge}
-              </Badge>
-            </Zoom>
-            <Zoom duration={1000} delay={400}>
-              <MainHeading>{currentSlide.title}</MainHeading>
-            </Zoom>
-            <Fade duration={1200} delay={600}>
-              <SubHeading>{currentSlide.subtitle}</SubHeading>
-            </Fade>
-          </ContentContainer>
-        </Fade>
+        <ContentContainer key={currentImageIndex}>
+          <Badge>
+            <ContentIcon src={ellipse} />
+            {currentSlide.badge}
+          </Badge>
+          <MainHeading>{currentSlide.title}</MainHeading>
+          <SubHeading>{currentSlide.subtitle}</SubHeading>
+        </ContentContainer>
       </StyledContainer>
       <ProgressBar>
         {slides.map((_, index) => (
